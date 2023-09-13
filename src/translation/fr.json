@@ -1,0 +1,161 @@
+{
+    "general": {
+      "button": {
+        "send": "Envoyer",
+        "close": "Fermer",
+        "download": "Télécharger",
+        "knowMore": "En savoir plus"
+      }
+    },
+    "profile": {
+      "hello": "Bonjour",
+      "im": "Je suis",
+      "webDeveloper": "Développeur Web",
+      "presentation": "Je suis un développeur web basé en France. J'ai une passion pour le design web et j'aime créer pour le web et les appareils mobiles.",
+      "cta": "Parlons",
+      "checkOut": "Découvrez mon",
+      "availability": {
+        "yes": "En recherche de poste",
+        "no": "En poste"
+      }
+    },
+    "navbar": {
+      "link": {
+        "home": "Accueil",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "testimonials": "Témoignages",
+        "contact": "Contact",
+        "cv": "CV",
+        "game": "Jeu"
+      }
+    },
+    "skills": {
+      "my": "Mes",
+      "skills": "Compétences",
+      "whatImWorkingWith": "Ce avec quoi je travaille",
+      "cards": {
+        "php": {
+          "icon": "FaPhp",
+          "title": "PHP 7.4 / 8.2",
+          "description": "J'ai commencé le code en apprenant avec PHP. J'ai travaillé avec des frameworks comme Symfony."
+        },
+        "symfony5": {
+          "icon": "FaSymfony",
+          "title": "Symfony 5",
+          "description": "Symfony est mon premier framework PHP. J'ai travaillé avec des composants comme Twig, Doctrine, etc."
+        },
+        "reactJs": {
+          "icon": "FaReact",
+          "title": "React JS",
+          "description": "React JS est ma première bibliothèque JavaScript. J'ai travaillé avec des bibliothèques comme Redux, React Router, etc."
+        },
+        "typescript": {
+          "icon": "SiTypescript",
+          "title": "TypeScript",
+          "description": "J'ai appris TypeScript en travaillant avec React JS."
+        },
+        "redux": {
+          "icon": "SiRedux",
+          "title": "Redux",
+          "description": "J'ai appris Redux et Redux Toolkit en travaillant avec React JS."
+        },
+        "github": {
+          "icon": "FaGithub",
+          "title": "GitHub",
+          "description": "J'utilise Github pour mes projets personnels et tests."
+        },
+        "gitlab": {
+          "icon": "FaGitlab",
+          "title": "GitLab",
+          "description": "J'utilise Gitlab pour mes projets professionnels mais aussi personnels, CI / CD, etc..."
+        },
+        "nextjs": {
+          "icon": "TbBrandNextjs",
+          "title": "Next JS",
+          "description": "J'ai appris Next JS en travaillant avec React JS."
+        },
+        "docker": {
+          "icon": "FaDocker",
+          "title": "Docker",
+          "description": "J'ai appris Docker en travaillant avec Symfony en entreprise."
+        },
+        "stripe": {
+          "icon": "FaCcStripe",
+          "title": "Stripe",
+          "description": "J'ai appris à utiliser Stripe en travaillant avec Symfony en entreprise."
+        },
+        "strapi": {
+          "icon": "SiStrapi",
+          "title": "Strapi",
+          "description": "J'ai appris à utiliser Strapi en travaillant avec React JS en entreprise."
+        },
+        "nodejs": {
+          "icon": "FaNodeJs",
+          "title": "Node JS",
+          "description": "J'ai appris à Node JS en travaillant avec React JS sur des projets MERN."
+        },
+        "expressjs": {
+          "icon": "SiExpress",
+          "title": "Express JS",
+          "description": "J'ai appris à Express JS en travaillant avec React JS sur des projets MERN."
+        },
+        "linux": {
+          "icon": "FaLinux",
+          "title": "Linux",
+          "description": "J'utilise Linux pour travailler sur mes projets personnels et professionnels."
+        },
+        "apple": {
+          "icon": "FaApple",
+          "title": "Mac OS",
+          "description": "J'ai démarrer le code sur Mac OS. Mais je suis passé sur Linux pour travailler sur mes projets personnels et professionnels."
+        },
+        "mysql": {
+          "icon": "SiMysql",
+          "title": "MySQL",
+          "description": "J'ai appris Mysql en travaillant avec Symfony."
+        }
+      }
+    },
+    "cv": {
+      "title": "Mon",
+      "titleComplement": "CV",
+      "download": "Télécharger mon CV",
+      "downloadComplement": "Mon CV au format PDF."
+    },
+    "projects": {
+      "title": "Projets",
+      "titleComplement": "Récents",
+      "description": "Quelques uns de mes projets récents sur lesquels j'ai travaillé.",
+      "cards": {
+        "repositoryLink":"Lien du repository",
+        "demoLink":"Lien de demo",
+        "available":"Disponible",
+        "notAvailable":"Indisponible",
+        "disneyplus": {
+          "name": "Disney+",
+          "description": "Disney+ clone réalisé avec React JS, Redux, Firebase, Styled Components, etc..."
+        },
+        "amazon": {
+          "name": "Amazon",
+          "description": "Amazon clone réalisé avec React JS, Redux, Firebase, Styled Components, etc..."
+        },
+        "project3": {
+          "name": "Projet 3",
+          "description": "Description du projet 3"
+        },
+        "project4": {
+          "name": "Projet 4",
+          "description": "Description du projet 4"
+        },
+        "project5": {
+          "name": "Projet 5",
+          "description": "Description du projet 5"
+        },
+        "project6": {
+          "name": "Projet 6",
+          "description": "Description du projet 6"
+        }
+      }
+    }
+  }
