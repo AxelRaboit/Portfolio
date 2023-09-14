@@ -12,7 +12,7 @@ import {
 import { selectTheme, setTheme } from "@/src/redux/slices/theme/ThemeSlice";
 
 const links = [
-    { href: "/#home", label: "navbar.link.home" },
+    { href: "/home", label: "navbar.link.home" },
     { href: "/#skills", label: "navbar.link.skills" },
     { href: "/#projects", label: "navbar.link.projects" },
     { href: "/#testimonials", label: "navbar.link.testimonials" },
