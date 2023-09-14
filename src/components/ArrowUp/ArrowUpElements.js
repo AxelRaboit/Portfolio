@@ -4,6 +4,7 @@ export const ContainerArrow = styled.div`
     position: fixed;
     right: 50px;
     bottom: 20px;
+    z-index: 999;
 
     .arrow-up-icon {
         color: var(--color-primary);

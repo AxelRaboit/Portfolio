@@ -9,6 +9,7 @@ import {
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { selectScrollIsLocked } from "@/src/redux/slices/scrolllock/ScrolllockSlice";
+import { Footer } from "@/src/components";
 
 export const GlobalWrapper = ({ children }) => {
     const theme = useSelector(selectTheme);
@@ -24,6 +25,9 @@ export const GlobalWrapper = ({ children }) => {
                 <Header />
             </Background>
             {children}
+            <Background theme={theme}>
+                <Footer />
+            </Background>
         </Container>
     );
 };

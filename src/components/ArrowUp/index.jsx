@@ -23,7 +23,7 @@ export const ArrowUp = () => {
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({
+        window.scroll({
             top: 0,
             behavior: "smooth",
         });

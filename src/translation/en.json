@@ -7,6 +7,17 @@
         "knowMore": "More"
       }
     },
+    "contact": {
+      "address": "Address",
+      "contactMe": "Contact me",
+      "checkMyMedia": "Check my social media",
+      "form": {
+        "fullname": "Fullname",
+        "email": "Email",
+        "message": "Message",
+        "submit":"Submit"
+      }
+    },
     "profile": {
       "hello": "Hello",
       "im": "I'm",

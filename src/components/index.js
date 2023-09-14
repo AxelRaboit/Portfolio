@@ -10,5 +10,6 @@ import { Projects } from './Projects/Projects';
 import { DynamicCv } from './DynamicCv';
 import { TestimonialsComp } from './Testimonials/Testimonial';
 import { TestimomnialsSlider } from './Testimonials/Slider';
+import { Footer } from './Footer';
 
-export { Header, Navbar, GlobalWrapper, DefaultButton, Home, ArrowUp, Profile, Skills, Projects, DynamicCv, TestimonialsComp, TestimomnialsSlider }
+export { Header, Navbar, GlobalWrapper, DefaultButton, Home, ArrowUp, Profile, Skills, Projects, DynamicCv, TestimonialsComp, TestimomnialsSlider, Footer }
