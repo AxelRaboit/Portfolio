@@ -8,7 +8,7 @@ import { Profile } from './Profile';
 import { Skills } from './Skills/Skills';
 import { Projects } from './Projects/Projects';
 import { DynamicCv } from './DynamicCv';
-import { TestimonialsComp } from './Testimonials/Testimonial';
+import { TestimonialsComp } from './Testimonials/Testimonials';
 import { TestimomnialsSlider } from './Testimonials/Slider';
 import { Footer } from './Footer';
 

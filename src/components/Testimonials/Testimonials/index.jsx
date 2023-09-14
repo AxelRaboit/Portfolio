@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import { Container, Testimonials, Buttons } from "./TestimonialElements";
+import { Container, Testimonials, Buttons } from "./TestimonialsElements";
 import { TestimomnialsSlider } from "@/src/components/Testimonials/Slider";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Slide } from "react-awesome-reveal";
@@ -103,7 +103,7 @@ export const TestimonialsComp = () => {
         <TestimomnialsSlider item={item} key={i} />
     ));
     return (
-        <Container id="testimonial" theme={theme}>
+        <Container id="testimonials" theme={theme}>
             <Slide direction="left" triggerOnce>
                 <span className="green">{t("testimonials.title")}</span>
                 <h1>{t('testimonials.titleComplement')}</h1>
