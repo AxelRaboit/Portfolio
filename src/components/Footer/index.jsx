@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 import {
     AiOutlineInstagram,
     AiOutlineGithub,
@@ -14,7 +15,28 @@ import { Container, Profile, Form } from "./FooterElements";
 import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+    const form = useRef();
     const { t } = useTranslation();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                "service_9blub4n",
+                "template_uet5a6g",
+                "#form",
+                "_ZEVAh29BWNeGORjY"
+            )
+            .then(
+                function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                },
+                function (error) {
+                    console.log("FAILED...", error);
+                }
+            );
+    };
 
     return (
         <Slide direction="left" delay={1} triggerOnce>
@@ -70,13 +92,14 @@ export const Footer = () => {
                 </Profile>
                 <Form>
                     <Slide direction="right" triggerOnce>
-                        <form>
+                        <form ref={form} onSubmit={sendEmail} id="form">
                             <div className="name">
                                 <span>
                                     <CgProfile />
                                 </span>
                                 <input
                                     type="text"
+                                    name="user_name"
                                     placeholder={`${t(
                                         "contact.form.fullname"
                                     )}...`}
@@ -88,6 +111,7 @@ export const Footer = () => {
                                 </span>
                                 <input
                                     type="email"
+                                    name="user_email"
                                     placeholder={`${t(
                                         "contact.form.email"
                                     )}...`}
@@ -98,6 +122,7 @@ export const Footer = () => {
                                     <FiMail />
                                 </span>
                                 <textarea
+                                    name="message"
                                     cols="30"
                                     rows="10"
                                     placeholder={`${t(
@@ -105,7 +130,9 @@ export const Footer = () => {
                                     )}...`}
                                 ></textarea>
                             </div>
-                            <button>{t("contact.form.submit")}</button>
+                            <button type="submit">
+                                {t("contact.form.submit")}
+                            </button>
                         </form>
                     </Slide>
                 </Form>
