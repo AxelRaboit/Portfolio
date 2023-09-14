@@ -1,6 +1,5 @@
 "use client";
 import { GlobalWrapper } from "@/src/components";
-import styles from "./page.module.css";
 import translationEN from "@/src/translation/en.json";
 import translationFR from "@/src/translation/fr.json";
 import i18n from "i18next";
@@ -31,7 +30,7 @@ export default function Index() {
 
     return (
         <PersistGate loading={null} persistor={persistor}>
-            <main className={styles.main}>
+            <main>
                 <GlobalWrapper>
                     <Home />
                 </GlobalWrapper>
