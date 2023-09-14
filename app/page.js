@@ -33,7 +33,7 @@ export default function Index() {
         <PersistGate loading={null} persistor={persistor}>
             <main className={styles.main}>
                 <GlobalWrapper>
-                  <Home />
+                    <Home />
                 </GlobalWrapper>
             </main>
         </PersistGate>

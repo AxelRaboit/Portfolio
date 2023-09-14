@@ -10,6 +10,8 @@ export const Home = () => {
     const theme = useSelector(selectTheme);
 
     return (
+
+
         <>
             <Banner theme={theme}>
                 <Profile />

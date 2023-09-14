@@ -1,15 +1,21 @@
-"use client";
 import "./globals.css";
-import { Provider } from "react-redux";
-import store from "@/src/redux/store";
+import { LayoutComponent } from "./layoutComponent";
+
+export const metadata = {
+    title: {
+        default: "Accueil | Axel Portfolio",
+        template: "%s | Axel Portfolio",
+    },
+    template: " %s | Axel Portfolio",
+    description: "Accueil du portfolio",
+    keywords: "accueil, axel raboit, axel, presentation, compétences, projets",
+}
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <Provider store={store}>
-                    {children}
-                </Provider>
+                <LayoutComponent children={children } />
             </body>
         </html>
     );

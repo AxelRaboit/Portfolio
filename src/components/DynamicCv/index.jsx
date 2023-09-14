@@ -6,21 +6,22 @@ export const DynamicCv = () => {
     return (
         <Container>
             <Slide direction="left" triggerOnce>
-            <div className="container-introduction">
-                <h2>Profil Professionnel</h2>
-                <p>
-                    J'ai commencé à coder en 2020 lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-                    ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum{" "}
-                </p>
-            </div>
+                <div className="container-introduction">
+                    <h2>Profil Professionnel</h2>
+                    <p>
+                        J'ai commencé à coder en 2020 lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum{" "}
+                    </p>
+                </div>
             </Slide>
             <Slide direction="left" triggerOnce>
                 <h2>Expérience Professionnelle</h2>
@@ -49,7 +50,13 @@ export const DynamicCv = () => {
                             page dynamique.
                         </li>
                         <li>Travail autant sur le front que sur le back.</li>
-                        <li>/home/axel/Documents/Dev/School/side_projects/portfolio/axel-portfolio/src/pages/CV/DynamicCV/DynamicCVElements.js /home/axel/Documents/Dev/School/side_projects/portfolio/axel-portfolio/src/pages/CV/DynamicCV/index.jsxitlab.
+                        <li>
+                            Cette experience m'a permis de consolider énormement
+                            mes connaissances en PHP et en Symfony.
+                        </li>
+                        <li>
+                            J'ai également appris à travailler en équipe et à
+                            utiliser Git & Gitlab.
                         </li>
                         <li>
                             En plus d'avoir travaillé sur le développement de la
