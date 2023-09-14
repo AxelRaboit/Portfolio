@@ -37,7 +37,7 @@ export const Footer = () => {
                             <span>
                                 <HiOutlineMailOpen />
                             </span>
-                            <a href="mailto:miladamiri@gmail.com">
+                            <a href="mailto:axel.raboit@gmail.com">
                                 axel.raboit@gmail.com
                             </a>
                         </div>
