@@ -117,6 +117,40 @@
         }
       }
     },
+    "testimonials": {
+      "title": "Testomonials",
+      "titleComplement": "What people say about me",
+      "testimonial1": {
+        "name": "Name 1",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      },
+      "testimonial2": {
+        "name": "Name 2",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      },
+      "testimonial3": {
+        "name": "Name 3",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      },
+      "testimonial4": {
+        "name": "Name 4",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      },
+      "testimonial5": {
+        "name": "Name 5",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      },
+      "testimonial6": {
+        "name": "Name 6",
+        "position": "Web Developer",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores."
+      }
+    },
     "cv": {
       "title": "My",
       "titleComplement": "CV",

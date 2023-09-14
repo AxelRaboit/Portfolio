@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { useTranslation } from "react-i18next";
 import { CropText } from "@/src/tools/CropText";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container } from "./ProjectElements";

@@ -59,11 +59,7 @@ export const Background = styled.div`
 `;
 
 export const LightColor = styled.div`
-    background: linear-gradient(
-        159deg,
-        rgb(45, 45, 58) 0%,
-        rgb(43, 43, 53) 100%
-    );
+    background: var(--color-dark-grey);
 `;
 
 export const ContainerArrow = styled.div`

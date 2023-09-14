@@ -1,4 +1,4 @@
-import { Profile, Skills, Projects } from "@/src/components";
+import { Profile, Skills, Projects, TestimonialsComp } from "@/src/components";
 import { ContainerArrow, Banner } from "./HomeElements";
 import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { Slide } from "react-awesome-reveal";
@@ -25,6 +25,7 @@ export const Home = () => {
             </Banner>
             <Skills />
             <Projects />
+            <TestimonialsComp />
             <ArrowUp />
         </>
     );
