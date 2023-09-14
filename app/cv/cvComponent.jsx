@@ -34,13 +34,11 @@ const CvComponent = () => {
 
     return (
         <GlobalWrapper>
-            <Background theme={theme}>
-                <Container className="container">
-                    <DefaultButton text={t("cv.download")} link="#" />
-                    <p className="download-information">{t("cv.downloadComplement")}</p>
-                    <DynamicCv />
-                </Container>
-            </Background>
+            <Container className="container">
+                <DefaultButton text={t("cv.download")} link="#" />
+                <p className="download-information">{t("cv.downloadComplement")}</p>
+                <DynamicCv />
+            </Container>
         </GlobalWrapper>
     );
 };
