@@ -61,6 +61,15 @@
           "title": "React JS",
           "description": "React JS is my first JavaScript library. I've worked with libraries such as Redux, React Router and others."
         },
+        "javascript": {
+          "icon": "FaJs",
+          "title": "JavaScript",
+          "description": "I learned JavaScript in second programming language. I've worked with jQuery and others."
+        },
+        "jquery": {
+          "title": "jQuery",
+          "description": "I learned jQuery by working with JavaScript."
+        },
         "typescript": {
           "icon": "SiTypescript",
           "title": "TypeScript",
@@ -125,6 +134,10 @@
           "icon": "SiMysql",
           "title": "MySQL",
           "description": "I learned Mysql by working with Symfony."
+        },
+        "sass": {
+          "title": "Sass",
+          "description": "I learned Sass as first CSS preprocessor."
         }
       }
     },

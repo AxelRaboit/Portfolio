@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Cards } from "./SkillsElements";
 import { useTranslation } from "react-i18next";
-import { FaApple, FaLinux, FaNodeJs, FaCcStripe, FaDocker, FaGithub, FaReact, FaPhp, FaSymfony, FaGitlab } from "react-icons/fa";
-import { SiMysql, SiRedux, SiStrapi, SiExpress, SiTypescript } from "react-icons/si";
+import { FaApple, FaLinux, FaNodeJs, FaCcStripe, FaDocker, FaGithub, FaReact, FaPhp, FaSymfony, FaGitlab, FaSass } from "react-icons/fa";
+import { SiMysql, SiJavascript, SiRedux, SiStrapi, SiExpress, SiTypescript, SiJquery } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Card } from "../Card";
 import { Slide } from "react-awesome-reveal";
@@ -14,6 +14,8 @@ export const Skills = () => {
         { Icon: FaPhp, titleKey: "skills.cards.php.title", descriptionKey: "skills.cards.php.description", link: "https://www.php.net/" },
         { Icon: FaSymfony, titleKey: "skills.cards.symfony5.title", descriptionKey: "skills.cards.symfony5.description", link: "https://symfony.com/" },
         { Icon: FaReact, titleKey: "skills.cards.reactJs.title", descriptionKey: "skills.cards.reactJs.description", link: "https://reactjs.org/" },
+        { Icon: SiJavascript, titleKey: "skills.cards.javascript.title", descriptionKey: "skills.cards.javascript.description", link: "https://www.javascript.com/" },
+        { Icon: SiJquery, titleKey: "skills.cards.jquery.title", descriptionKey: "skills.cards.jquery.description", link: "https://jquery.com/" },
         { Icon: SiTypescript, titleKey: "skills.cards.typescript.title", descriptionKey: "skills.cards.typescript.description", link: "https://www.typescriptlang.org/" },
         { Icon: SiRedux, titleKey: "skills.cards.redux.title", descriptionKey: "skills.cards.redux.description", link: "https://redux.js.org/" },
         { Icon: FaGithub, titleKey: "skills.cards.github.title", descriptionKey: "skills.cards.github.description", link: "https://github.com/" },
@@ -27,6 +29,7 @@ export const Skills = () => {
         { Icon: FaLinux, titleKey: "skills.cards.linux.title", descriptionKey: "skills.cards.linux.description", link: "https://fr.wikipedia.org/wiki/Linux" },
         { Icon: FaApple, titleKey: "skills.cards.apple.title", descriptionKey: "skills.cards.apple.description", link: "https://fr.wikipedia.org/wiki/MacOS" },
         { Icon: SiMysql, titleKey: "skills.cards.mysql.title", descriptionKey: "skills.cards.mysql.description", link: "https://www.mysql.com/" },
+        { Icon: FaSass,  titleKey: "skills.cards.sass.title", descriptionKey: "skills.cards.sass.description", link: "https://sass-lang.com/" },
     ];
 
     return (
