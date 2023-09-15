@@ -56,3 +56,23 @@ li {
 li > ul {
   margin-left: 1rem;
 }
+
+/* CSS pour personnaliser le thème "light" */
+.grecaptcha-badge {
+  background-color: red; /* Changez cette couleur en fonction de vos besoins */
+  border-radius: 5px;
+}
+
+.grecaptcha-badge:hover {
+  background-color: blue; /* Changez cette couleur en fonction de vos besoins */
+}
+
+/* CSS pour personnaliser le thème "dark" */
+.grecaptcha-badge.dark {
+  background-color: green; /* Changez cette couleur en fonction de vos besoins */
+  border-radius: 5px;
+}
+
+.grecaptcha-badge.dark:hover {
+  background-color: purple; /* Changez cette couleur en fonction de vos besoins */
+}

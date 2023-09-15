@@ -178,8 +178,9 @@ export const Form = styled.div`
             }
         }
 
-        .recaptcha {
+        .g-recaptcha {
             margin: 1rem 0;
+            overflow: hidden;
         }
 
         .container-submit {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
@@ -228,8 +228,9 @@ export const Footer = () => {
                                     ></textarea>
                                 </div>
                                 <ReCAPTCHA
-                                    className="recaptcha"
+                                    className="g-recaptcha"
                                     sitekey={recaptchaSiteKey}
+                                    theme="light"
                                     onChange={(value) => {
                                         setIsValidatedRecaptcha(!!value);
                                     }}
