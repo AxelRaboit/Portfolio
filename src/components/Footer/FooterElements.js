@@ -180,7 +180,14 @@ export const Form = styled.div`
 
         .g-recaptcha {
             margin: 1rem 0;
-            overflow: hidden;
+            transform: scale(0.8);
+            transform-origin: 0;
+            transform: scale(0.8);
+            transform-origin: 0 0;
+            -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
         }
 
         .container-submit {
