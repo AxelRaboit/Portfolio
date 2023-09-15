@@ -20,7 +20,6 @@ export const Container = styled.div`
     }
 `;
 export const Profile = styled.div`
-    
     flex: 1;
 
     .address {
@@ -51,7 +50,7 @@ export const Profile = styled.div`
 
             a {
                 text-decoration: none;
-                color: lightgray;
+                color: var(--color-primary);
                 &:hover {
                     color: var(--color-primary);
                 }
@@ -73,7 +72,7 @@ export const Profile = styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #000;
+                background-color: var(--color-dark);
                 width: 2rem;
                 height: 2rem;
                 margin-right: 0.5rem;
@@ -86,7 +85,7 @@ export const Profile = styled.div`
 
                 a {
                     margin-top: 0.2rem;
-                    color: #fff;
+                    color: var(--color-light);
                 }
             }
         }
@@ -113,7 +112,6 @@ export const ArrowUp = styled.div`
 `;
 
 export const Form = styled.div`
-
     flex: 1;
 
     h1 {
@@ -122,7 +120,10 @@ export const Form = styled.div`
     }
 
     form {
-        background-color: #191923;
+        background: ${(props) =>
+            props.theme === "dark"
+                ? "var(--color-dark-grey)"
+                : "var(--color-light)"};
         padding: 0.8rem;
         border-radius: 5px;
 
@@ -138,9 +139,29 @@ export const Form = styled.div`
                 width: 100%;
                 border: none;
                 outline: none;
-                color: #fff;
+                color: ${(props) =>
+                    props.theme === "dark"
+                        ? "var(--color-light)"
+                        : "var(--color-dark-grey)"};
                 background-color: transparent;
                 padding: 1rem 0.5rem;
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    transition: background-color 5000s ease-in-out 0s;
+                    -webkit-text-fill-color: ${(props) =>
+                        props.theme === "dark"
+                            ? "var(--color-light)"
+                            : "var(--color-dark-grey)"} !important;
+                    -webkit-box-shadow: 0 0 0px 1000px
+                        ${(props) =>
+                            props.theme === "dark"
+                                ? "var(--color-dark-grey)"
+                                : "var(--color-light)"}
+                        inset !important;
+                }
             }
 
             span {
@@ -158,8 +179,7 @@ export const Form = styled.div`
         }
 
         .container-submit {
-
-            text-align: right;
+            /* text-align: right; */
 
             button {
                 width: 5rem;
@@ -170,12 +190,11 @@ export const Form = styled.div`
                 border-radius: 5px;
                 filter: drop-shadow(0px 4px 5px #01be9551);
                 cursor: pointer;
-    
+
                 &:hover {
                     filter: drop-shadow(0px 6px 9px #01be9551);
                 }
             }
         }
-
     }
 `;

@@ -13,144 +13,179 @@ import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide } from "react-awesome-reveal";
 import { Container, Profile, Form } from "./FooterElements";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Footer = () => {
     const form = useRef();
     const { t } = useTranslation();
+    const theme = useSelector(selectTheme);
+    const notifySuccess = () =>
+        toast.success("Votre message a bien été envoyé", {
+            /* https://fkhadra.github.io/react-toastify/introduction/ */
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: theme === "dark" ? "dark" : "light",
+        });
+
+    const notifyError = () =>
+        toast.error("Une erreur est survenue", {
+            /* https://fkhadra.github.io/react-toastify/introduction/ */
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: theme === "dark" ? "dark" : "light",
+        });
 
     const sendEmail = (e) => {
         e.preventDefault();
-
+        
         emailjs
-            .sendForm(
-                "service_9blub4n",
-                "template_uet5a6g",
-                "#form",
-                "_ZEVAh29BWNeGORjY"
+        .sendForm(
+            "service_9blub4n",
+            "template_uet5a6g",
+            "#form",
+            "_ZEVAh29BWNeGORjY"
             )
             .then(
                 function (response) {
                     console.log("SUCCESS!", response.status, response.text);
+                    notifySuccess();
                 },
                 function (error) {
                     console.log("FAILED...", error);
+                    notifyError();
                 }
             );
     };
 
     return (
-        <Slide direction="left" delay={1} triggerOnce>
-            <Container id="footer">
-                <Profile>
-                    <h1>Portfolio</h1>
-                    <div className="address">
-                        <h1>{t("contact.address")} : </h1>
-                        <p>16 rue Jean Jaurès 51530 Pierry</p>
-                    </div>
-                    <div className="links">
-                        <h1>{t("contact.contactMe")} : </h1>
-                        <div>
-                            <span>
-                                <FiPhoneCall />
-                            </span>
-                            <a href="tel:+33698357147">+33 6 98 35 71 47</a>
+        <>
+            <ToastContainer />
+            <Slide direction="left" delay={1} triggerOnce>
+                <Container id="footer">
+                    <Profile>
+                        <h1>Portfolio</h1>
+                        <div className="address">
+                            <h1>{t("contact.address")} : </h1>
+                            <p>16 rue Jean Jaurès 51530 Pierry</p>
                         </div>
-                        <div>
-                            <span>
-                                <HiOutlineMailOpen />
-                            </span>
-                            <a href="mailto:axel.raboit@gmail.com">
-                                axel.raboit@gmail.com
-                            </a>
-                        </div>
-                    </div>
-                    <div className="profiles">
-                        <h1>{t("contact.checkMyMedia")}</h1>
-                        <div className="icons">
-                            <span>
-                                <a
-                                    target="_blank"
-                                    href="https://www.linkedin.com/in/axel-raboit/"
-                                >
-                                    <FaLinkedinIn />
-                                </a>
-                            </span>
-                            <span>
-                                <a
-                                    target="_blank"
-                                    href="https://github.com/AxelRaboit"
-                                >
-                                    <AiOutlineGithub />
-                                </a>
-                            </span>
-                            <span>
-                                <a
-                                    target="_blank"
-                                    href="https://gitlab.com/axel.raboit"
-                                >
-                                    <AiFillGitlab />
-                                </a>
-                            </span>
-                            <span>
-                                <a
-                                    target="_blank"
-                                    href="https://www.instagram.com/axelr_7/"
-                                >
-                                    <AiOutlineInstagram />
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </Profile>
-                <Form>
-                    <Slide direction="right" triggerOnce>
-                        <form ref={form} onSubmit={sendEmail} id="form">
-                            <div className="name">
+                        <div className="links">
+                            <h1>{t("contact.contactMe")} : </h1>
+                            <div>
                                 <span>
-                                    <CgProfile />
+                                    <FiPhoneCall />
                                 </span>
-                                <input
-                                    type="text"
-                                    name="user_name"
-                                    placeholder={`${t(
-                                        "contact.form.fullname"
-                                    )}...`}
-                                />
+                                <a href="tel:+33698357147">+33 6 98 35 71 47</a>
                             </div>
-                            <div className="email">
+                            <div>
                                 <span>
-                                    <MdAlternateEmail />
+                                    <HiOutlineMailOpen />
                                 </span>
-                                <input
-                                    type="email"
-                                    name="user_email"
-                                    placeholder={`${t(
-                                        "contact.form.email"
-                                    )}...`}
-                                />
+                                <a href="mailto:axel.raboit@gmail.com">
+                                    axel.raboit@gmail.com
+                                </a>
                             </div>
-                            <div className="message">
-                                <span className="messageIcon">
-                                    <FiMail />
+                        </div>
+                        <div className="profiles">
+                            <h1>{t("contact.checkMyMedia")}</h1>
+                            <div className="icons">
+                                <span>
+                                    <a
+                                        target="_blank"
+                                        href="https://www.linkedin.com/in/axel-raboit/"
+                                    >
+                                        <FaLinkedinIn />
+                                    </a>
                                 </span>
-                                <textarea
-                                    name="message"
-                                    cols="30"
-                                    rows="10"
-                                    placeholder={`${t(
-                                        "contact.form.message"
-                                    )}...`}
-                                ></textarea>
+                                <span>
+                                    <a
+                                        target="_blank"
+                                        href="https://github.com/AxelRaboit"
+                                    >
+                                        <AiOutlineGithub />
+                                    </a>
+                                </span>
+                                <span>
+                                    <a
+                                        target="_blank"
+                                        href="https://gitlab.com/axel.raboit"
+                                    >
+                                        <AiFillGitlab />
+                                    </a>
+                                </span>
+                                <span>
+                                    <a
+                                        target="_blank"
+                                        href="https://www.instagram.com/axelr_7/"
+                                    >
+                                        <AiOutlineInstagram />
+                                    </a>
+                                </span>
                             </div>
-                            <div className="container-submit">
-                                <button type="submit">
-                                    {t("contact.form.submit")}
-                                </button>
-                            </div>
-                        </form>
-                    </Slide>
-                </Form>
-            </Container>
-        </Slide>
+                        </div>
+                    </Profile>
+                    <Form theme={theme}>
+                        <Slide direction="right" triggerOnce>
+                            <form ref={form} onSubmit={sendEmail} id="form">
+                                <div className="name">
+                                    <span>
+                                        <CgProfile />
+                                    </span>
+                                    <input
+                                        type="text"
+                                        name="user_name"
+                                        placeholder={`${t(
+                                            "contact.form.fullname"
+                                        )}...`}
+                                    />
+                                </div>
+                                <div className="email">
+                                    <span>
+                                        <MdAlternateEmail />
+                                    </span>
+                                    <input
+                                        type="email"
+                                        name="user_email"
+                                        placeholder={`${t(
+                                            "contact.form.email"
+                                        )}...`}
+                                    />
+                                </div>
+                                <div className="message">
+                                    <span className="messageIcon">
+                                        <FiMail />
+                                    </span>
+                                    <textarea
+                                        name="message"
+                                        cols="30"
+                                        rows="10"
+                                        placeholder={`${t(
+                                            "contact.form.message"
+                                        )}...`}
+                                    ></textarea>
+                                </div>
+                                <div className="container-submit">
+                                    <button type="submit">
+                                        {t("contact.form.submit")}
+                                    </button>
+                                </div>
+                            </form>
+                        </Slide>
+                    </Form>
+                </Container>
+            </Slide>
+        </>
     );
 };
