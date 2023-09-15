@@ -19,6 +19,7 @@ const links = [
     { href: "/#footer", label: "navbar.link.contact" },
     { href: "/cv", label: "navbar.link.cv" },
     { href: "/snake", label: "navbar.link.game" },
+    { href: "/signup", label: "SignUp" },
 ];
 
 const USAflag = "assets/flag/usa-flag.png";
