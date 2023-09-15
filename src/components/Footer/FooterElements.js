@@ -157,19 +157,25 @@ export const Form = styled.div`
             }
         }
 
-        button {
-            width: 5rem;
-            height: 1.8rem;
-            background-color: #01be96;
-            color: var(--color-light);
-            border: none;
-            border-radius: 5px;
-            filter: drop-shadow(0px 4px 5px #01be9551);
-            cursor: pointer;
+        .container-submit {
 
-            &:hover {
-                filter: drop-shadow(0px 6px 9px #01be9551);
+            text-align: right;
+
+            button {
+                width: 5rem;
+                height: 1.8rem;
+                background-color: #01be96;
+                color: var(--color-light);
+                border: none;
+                border-radius: 5px;
+                filter: drop-shadow(0px 4px 5px #01be9551);
+                cursor: pointer;
+    
+                &:hover {
+                    filter: drop-shadow(0px 6px 9px #01be9551);
+                }
             }
         }
+
     }
 `;

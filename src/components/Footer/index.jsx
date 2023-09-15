@@ -142,9 +142,11 @@ export const Footer = () => {
                                     )}...`}
                                 ></textarea>
                             </div>
-                            <button type="submit">
-                                {t("contact.form.submit")}
-                            </button>
+                            <div className="container-submit">
+                                <button type="submit">
+                                    {t("contact.form.submit")}
+                                </button>
+                            </div>
                         </form>
                     </Slide>
                 </Form>
