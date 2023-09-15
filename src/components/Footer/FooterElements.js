@@ -178,6 +178,10 @@ export const Form = styled.div`
             }
         }
 
+        .recaptcha {
+            margin: 1rem 0;
+        }
+
         .container-submit {
             /* text-align: right; */
 

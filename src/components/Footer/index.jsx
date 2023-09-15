@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
@@ -23,9 +23,15 @@ export const Footer = () => {
     const form = useRef();
     const { t } = useTranslation();
     const theme = useSelector(selectTheme);
+    const [isValidatedRecaptcha, setIsValidatedRecaptcha] = useState(false);
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
     const notifySuccess = () =>
         toast.success("Votre message a bien été envoyé", {
-            /* https://fkhadra.github.io/react-toastify/introduction/ */
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -36,9 +42,8 @@ export const Footer = () => {
             theme: theme === "dark" ? "dark" : "light",
         });
 
-    const notifyError = () =>
-        toast.error("Une erreur est survenue", {
-            /* https://fkhadra.github.io/react-toastify/introduction/ */
+    const notifyError = ({ message }) =>
+        toast.error(message, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -49,26 +54,74 @@ export const Footer = () => {
             theme: theme === "dark" ? "dark" : "light",
         });
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    const validateForm = () => {
+        const fullname = document.querySelector(
+            "#form input[name='user_name']"
+        );
+        const email = document.querySelector("#form input[name='user_email']");
+        const message = document.querySelector(
+            "#form textarea[name='message']"
+        );
 
-        emailjs
-            .sendForm(
-                "service_9blub4n",
-                "template_uet5a6g",
-                "#form",
-                "_ZEVAh29BWNeGORjY"
-            )
-            .then(
-                function (response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                    notifySuccess();
-                },
-                function (error) {
-                    console.log("FAILED...", error);
-                    notifyError();
-                }
-            );
+        const regexFullname = new RegExp(
+            "^[a-zA-ZÀ-ÿ]{2,40}[- ]{0,1}[a-zA-ZÀ-ÿ]{2,40}$"
+        );
+        const regexEmail = new RegExp(
+            "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"
+        );
+        const regexMessage = new RegExp(
+            "^[a-zA-ZÀ-ÿ0-9.,;:!?'\"()@&$€£%*+=s-]{2,500}$"
+        );
+
+        let isValid = true;
+
+        if (!regexFullname.test(fullname.value)) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.fullname")}`,
+            });
+        }
+
+        if (!regexEmail.test(email.value)) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.email")}`,
+            });
+        }
+
+        if (!regexMessage.test(message.value)) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.message")}`,
+            });
+        }
+
+        if (!isValidatedRecaptcha) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.recaptcha")}`,
+            });
+        }
+
+        if (isValid) {
+            emailjs
+                .sendForm(
+                    serviceId,
+                    templateId,
+                    "#form",
+                    userId
+                )
+                .then(
+                    function (response) {
+                        console.log("SUCCESS!", response.status, response.text);
+                        notifySuccess();
+                    },
+                    function (error) {
+                        console.log("FAILED...", error);
+                        notifyError();
+                    }
+                );
+        }
     };
 
     return (
@@ -139,12 +192,7 @@ export const Footer = () => {
                     </Profile>
                     <Form theme={theme}>
                         <Slide direction="right" triggerOnce>
-                            <form ref={form} onSubmit={sendEmail} id="form">
-                                <ReCAPTCHA
-                                    sitekey="6LfOiigoAAAAAL2nOTOe6wFtvLFbnsSu6XRG54JX"
-                                    onChange={(value) => console.log(value)}
-                                />
-
+                            <form ref={form} onSubmit={validateForm} id="form">
                                 <div className="name">
                                     <span>
                                         <CgProfile />
@@ -182,8 +230,21 @@ export const Footer = () => {
                                         )}...`}
                                     ></textarea>
                                 </div>
+                                <ReCAPTCHA
+                                    className="recaptcha"
+                                    sitekey={recaptchaSiteKey}
+                                    onChange={(value) => {
+                                        setIsValidatedRecaptcha(!!value);
+                                    }}
+                                />
                                 <div className="container-submit">
-                                    <button type="submit">
+                                    <button
+                                        type="submit"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            validateForm();
+                                        }}
+                                    >
                                         {t("contact.form.submit")}
                                     </button>
                                 </div>

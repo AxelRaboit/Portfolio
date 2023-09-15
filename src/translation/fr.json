@@ -1,4 +1,15 @@
 {
+    "messages": {
+      "form": {
+        "error": {
+          "emptyFields": "Veuillez remplir tous les champs.",
+          "recaptcha": "Veuillez cocher la case reCAPTCHA.",
+          "fullname": "Veuillez entrer un nom valide.",
+          "email": "Veuillez entrer une adresse email valide.",
+          "message": "Veuillez entrer un message valide."
+        }
+      }
+    },
     "general": {
       "button": {
         "send": "Envoyer",
