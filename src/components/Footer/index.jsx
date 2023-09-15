@@ -30,8 +30,8 @@ export const Footer = () => {
     const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
     const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
-    const notifySuccess = () =>
-        toast.success("Votre message a bien été envoyé", {
+    const notifySuccess = ({ message }) =>
+        toast.success(message, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -103,7 +103,7 @@ export const Footer = () => {
             });
         }
 
-        if (isValid) {
+        if (isValid) {                
             emailjs
                 .sendForm(
                     serviceId,
@@ -114,11 +114,15 @@ export const Footer = () => {
                 .then(
                     function (response) {
                         console.log("SUCCESS!", response.status, response.text);
-                        notifySuccess();
+                        notifySuccess({
+                            message: `${t("messages.form.success")}`,
+                        });
                     },
                     function (error) {
                         console.log("FAILED...", error);
-                        notifyError();
+                        notifyError({
+                            message: `${t("messages.form.error.globalError")}`,
+                        });
                     }
                 );
         }

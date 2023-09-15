@@ -2,12 +2,14 @@
     "messages": {
       "form": {
         "error": {
+          "globalError": "An error has occurred. Please try again later.",
           "emptyFields": "Please fill in all fields.",
           "recaptcha": "Please check the reCAPTCHA.",
           "fullname": "Please enter a valid fullname.",
           "email": "Please enter a valid email address.",
           "message": "Please enter a valid message."
-        }
+        },
+        "success": "Your message has been sent successfully."
       }
     },
     "general": {
