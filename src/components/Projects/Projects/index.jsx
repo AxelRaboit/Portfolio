@@ -62,7 +62,7 @@ const getProjects = async () => {
     try {
         let apiUrl;
 
-        if (process.env.NODE_ENV === "production") {
+        if (process.env.NODE_ENV === process.env.NEXT_PUBLIC_ENV_PRODUCTION) {
             apiUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL;
         } else {
             apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
