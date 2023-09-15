@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
     },
 });
 
-export default function Index() {
+export default function Page() {
     let persistor = persistStore(store);
 
     return (

@@ -43,7 +43,7 @@ export const Profile = () => {
                     </h3>
                     <p>{t("profile.presentation")} </p>
                     <div className="container-profile-cta">
-                        <DefaultButton text={t("profile.cta")} link="#" />
+                        <DefaultButton text={t("profile.cta")} link="#footer" isTarget={false} />
                     </div>
                     <Social>
                         <p>{t("profile.checkOut")}</p>
