@@ -1,14 +1,11 @@
 import React from "react";
 import { Container } from "./CardElements";
-import {
-    selectTheme,
-} from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { useSelector } from "react-redux";
 import { CropText } from "@/src/tools/CropText";
 import { useTranslation } from "react-i18next";
 
 export const Card = (props) => {
-
     const { t } = useTranslation();
 
     const theme = useSelector(selectTheme);
@@ -21,11 +18,11 @@ export const Card = (props) => {
             </span>
             <h1>{title}</h1>
             <CropText text={description} limit={110} />
-            <a target="_blank" href={link}>
-                <button>
-                    {t("general.button.knowMore")}
-                </button>
-            </a>
+            {link ? (
+                <a target="_blank" href={link}>
+                    <button>{t("general.button.knowMore")}</button>
+                </a>
+            ) : null}
         </Container>
     );
 };

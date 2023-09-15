@@ -25,8 +25,6 @@ export const Project = (props) => {
         isAvailable,
     } = props.data;
 
-    console.log(img);
-
     return (
         <Container
             className="project"
