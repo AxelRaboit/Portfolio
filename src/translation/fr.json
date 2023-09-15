@@ -1,4 +1,8 @@
 {
+    "global": {
+      "available": "Disponible",
+      "unavailable": "Indisponible"
+    },
     "messages": {
       "form": {
         "error": {
@@ -203,33 +207,7 @@
       "description": "Quelques uns de mes projets récents sur lesquels j'ai travaillé.",
       "cards": {
         "repositoryLink":"Lien du repository",
-        "demoLink":"Lien de demo",
-        "available":"Disponible",
-        "notAvailable":"Indisponible",
-        "disneyplus": {
-          "name": "Disney+",
-          "description": "Disney+ clone réalisé avec React JS, Redux, Firebase, Styled Components, etc..."
-        },
-        "amazon": {
-          "name": "Amazon",
-          "description": "Amazon clone réalisé avec React JS, Redux, Firebase, Styled Components, etc..."
-        },
-        "project3": {
-          "name": "Projet 3",
-          "description": "Description du projet 3"
-        },
-        "project4": {
-          "name": "Projet 4",
-          "description": "Description du projet 4"
-        },
-        "project5": {
-          "name": "Projet 5",
-          "description": "Description du projet 5"
-        },
-        "project6": {
-          "name": "Projet 6",
-          "description": "Description du projet 6"
-        }
+        "demoLink":"Lien de demo"
       }
     }
   }

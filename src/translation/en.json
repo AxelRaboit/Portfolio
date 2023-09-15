@@ -1,4 +1,8 @@
 {
+    "global": {
+      "available": "Available",
+      "unavailable": "Unavailable"
+    },
     "messages": {
       "form": {
         "error": {
@@ -222,31 +226,7 @@
         "repositoryLink":"Repository Link",
         "demoLink":"Demo Link",
         "available":"Available",
-        "notAvailable":"Not available",
-        "disneyplus": {
-          "name": "Disney+",
-          "description": "Disney+ clone made with React JS, Redux, Firebase, Styled Components, etc..."
-        },
-        "amazon": {
-          "name": "Amazon",
-          "description": "Amazon clone made with React JS, Redux, Firebase, Styled Components, etc..."
-        },
-        "project3": {
-          "name": "project 3",
-          "description": "Project description 3"
-        },
-        "project4": {
-          "name": "project 4",
-          "description": "Project description 4"
-        },
-        "project5": {
-          "name": "project 5",
-          "description": "Project description 5"
-        },
-        "project6": {
-          "name": "project 6",
-          "description": "Project description 6"
-        }
+        "notAvailable":"Not available"
       }
     }
   }

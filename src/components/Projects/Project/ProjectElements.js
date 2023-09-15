@@ -76,12 +76,16 @@ export const Container = styled.div`
     .description {
         a.demo-link, a.repo-link {
             color: var(--color-primary);
-            margin-left: 0.4rem;
             text-decoration: none;
+            font-size: 0.8rem;
 
             &:hover {
                 text-decoration: underline;
             }
+        }
+
+        a.repo-link {
+            margin-right: 0.4rem;
         }
     }
 

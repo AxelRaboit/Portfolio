@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "./ProjectsElements";
 import { Background } from "@/src/components/GlobalWrapper/GlobalWrapperElements";
 import { SliderComp } from "../Slider";
@@ -58,9 +58,51 @@ const projectsData = [
     },
 ];
 
+const getProjects = async () => {
+    try {
+        let apiUrl;
+
+        if (process.env.NODE_ENV === "production") {
+            apiUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL;
+        } else {
+            apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
+        }
+
+        const res = await fetch(`${apiUrl}/api/projects`, {
+            cache: "no-store",
+        });
+
+        if (!res.ok) {
+            throw new Error(
+                "Something went wrong while fetching projects data"
+            );
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 export const Projects = () => {
     const { t } = useTranslation();
     const theme = useSelector(selectTheme);
+    const [projects, setProjects] = useState([]);
+
+    /* console.log(projects); */
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const { projects } = await getProjects();
+                setProjects(projects);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchProjects();
+    }, []);
 
     return (
         <Background theme={theme}>
@@ -74,7 +116,7 @@ export const Projects = () => {
                     </h1>
                     <p>{t("projects.description")}</p>
                 </Zoom>
-                <SliderComp data={projectsData} />
+                <SliderComp data={projects} />
             </Container>
         </Background>
     );
