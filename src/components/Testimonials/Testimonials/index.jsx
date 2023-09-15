@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Container, Testimonials, Buttons } from "./TestimonialsElements";
 import { TestimomnialsSlider } from "@/src/components/Testimonials/Slider";
@@ -8,56 +8,33 @@ import { useTranslation } from "react-i18next";
 import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { useSelector } from "react-redux";
 
-let testimonials = [
-    {
-        name: "testimonials.testimonial1.name",
-        position: "testimonials.testimonial1.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 3,
-        description: `testimonials.testimonial1.description`,
-    },
-    {
-        name: "testimonials.testimonial2.name",
-        position: "testimonials.testimonial2.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 4,
-        description: `testimonials.testimonial2.description`,
-    },
-    {
-        name: "testimonials.testimonial3.name",
-        position: "testimonials.testimonial3.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 4,
-        description: `testimonials.testimonial3.description`,
-    },
-    {
-        name: "testimonials.testimonial4.name",
-        position: "testimonials.testimonial4.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 4,
-        description: `testimonials.testimonial4.description`,
-    },
-    {
-        name: "testimonials.testimonial5.name",
-        position: "testimonials.testimonial5.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 4,
-        description: `testimonials.testimonial5.description`,
-    },
-    {
-        name: "testimonials.testimonial6.name",
-        position: "testimonials.testimonial6.position",
-        img_url:
-            "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars: 4,
-        description: `testimonials.testimonial6.description`,
+const getTestimonials = async () => {
+    try {
+        let apiUrl;
+
+        if (process.env.NODE_ENV === process.env.NEXT_PUBLIC_ENV_PRODUCTION) {
+            apiUrl = process.env.NEXT_PUBLIC_PRODUCTION_URL;
+        } else {
+            apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
+        }
+
+        const res = await fetch(`${apiUrl}/api/testimonials`, {
+            cache: "no-store",
+        });
+
+        if (!res.ok) {
+            throw new Error(
+                "Something went wrong while fetching testimonials data"
+            );
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error(error);
     }
-];
+};
+
+
 var settings = {
     dots: true,
     infinite: true,
@@ -98,10 +75,27 @@ export const TestimonialsComp = () => {
     const { t } = useTranslation();
     const arrowRef = useRef(null);
     const theme = useSelector(selectTheme);
+    const [testimonials, setTestimonials] = useState([]);
     let testimonialsContent = "";
+    
+    
+    useEffect(() => {
+        const fetchSkills = async () => {
+            try {
+                const { testimonials } = await getTestimonials();
+                setTestimonials(testimonials);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        
+        fetchSkills();
+    }, []);
+    
     testimonialsContent = testimonials.map((item, i) => (
         <TestimomnialsSlider item={item} key={i} />
     ));
+
     return (
         <Container id="testimonials" theme={theme}>
             <Slide direction="left" triggerOnce>

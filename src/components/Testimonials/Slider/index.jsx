@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Header, Body, Footer } from "./TestimonialsSliderElements";
 import { IoIosQuote } from "react-icons/io";
 import { AiOutlineStar } from "react-icons/ai";
-import { useTranslation } from "react-i18next";
 import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { useSelector } from "react-redux";
 
 export const TestimomnialsSlider = (props) => {
-    const { name, position, img_url, stars, description } = props.item;
-    const { t } = useTranslation();
+    const { name, position, img, stars, description } = props.item;
     const theme = useSelector(selectTheme);
+
+    const defaultImage = "/assets/testimonial/default-user-image.png"
 
     return (
         <Container theme={theme}>
@@ -27,12 +27,12 @@ export const TestimomnialsSlider = (props) => {
                         ))}
                 </div>
             </Header>
-            <Body>{t(`${description}`)}</Body>
+            <Body>{description}</Body>
             <Footer>
-                <img src={img_url} alt={t(`${name}`)} />
+                <img src={img ? img : defaultImage} alt={name} />
                 <div className="details">
-                    <h1>{t(`${name}`)}</h1>
-                    <p>{t(`${position}`)}</p>
+                    <h1>{name}</h1>
+                    <p>{position}</p>
                 </div>
             </Footer>
         </Container>
