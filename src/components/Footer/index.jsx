@@ -103,28 +103,21 @@ export const Footer = () => {
             });
         }
 
-        if (isValid) {                
-            emailjs
-                .sendForm(
-                    serviceId,
-                    templateId,
-                    "#form",
-                    userId
-                )
-                .then(
-                    function (response) {
-                        console.log("SUCCESS!", response.status, response.text);
-                        notifySuccess({
-                            message: `${t("messages.form.success")}`,
-                        });
-                    },
-                    function (error) {
-                        console.log("FAILED...", error);
-                        notifyError({
-                            message: `${t("messages.form.error.globalError")}`,
-                        });
-                    }
-                );
+        if (isValid) {
+            emailjs.sendForm(serviceId, templateId, "#form", userId).then(
+                function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    notifySuccess({
+                        message: `${t("messages.form.success")}`,
+                    });
+                },
+                function (error) {
+                    console.log("FAILED...", error);
+                    notifyError({
+                        message: `${t("messages.form.error.globalError")}`,
+                    });
+                }
+            );
         }
     };
 
