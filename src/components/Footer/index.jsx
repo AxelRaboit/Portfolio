@@ -68,22 +68,34 @@ export const Footer = () => {
                         <h1>{t("contact.checkMyMedia")}</h1>
                         <div className="icons">
                             <span>
-                                <a href="/">
+                                <a
+                                    target="_blank"
+                                    href="https://www.linkedin.com/in/axel-raboit/"
+                                >
                                     <FaLinkedinIn />
                                 </a>
                             </span>
                             <span>
-                                <a href="/">
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/AxelRaboit"
+                                >
                                     <AiOutlineGithub />
                                 </a>
                             </span>
                             <span>
-                                <a href="/">
+                                <a
+                                    target="_blank"
+                                    href="https://gitlab.com/axel.raboit"
+                                >
                                     <AiFillGitlab />
                                 </a>
                             </span>
                             <span>
-                                <a href="/">
+                                <a
+                                    target="_blank"
+                                    href="https://www.instagram.com/axelr_7/"
+                                >
                                     <AiOutlineInstagram />
                                 </a>
                             </span>

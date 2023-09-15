@@ -22,8 +22,6 @@ export const Header = () => {
         }
     }, [bar, dispatch]);
 
-    console.log("bar", bar);
-
     return (
         <Container className="container" bar={bar ? 1 : 0} theme={theme}>
             <Logo>
