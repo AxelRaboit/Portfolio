@@ -53,7 +53,7 @@ export const Footer = () => {
                             <span>
                                 <FiPhoneCall />
                             </span>
-                            <a href="tel:+4733378901">+33 6 98 35 71 47</a>
+                            <a href="tel:+33698357147">+33 6 98 35 71 47</a>
                         </div>
                         <div>
                             <span>
