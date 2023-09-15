@@ -15,8 +15,9 @@ import { Container, Profile, Form } from "./FooterElements";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Footer = () => {
     const form = useRef();
@@ -50,13 +51,13 @@ export const Footer = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        
+
         emailjs
-        .sendForm(
-            "service_9blub4n",
-            "template_uet5a6g",
-            "#form",
-            "_ZEVAh29BWNeGORjY"
+            .sendForm(
+                "service_9blub4n",
+                "template_uet5a6g",
+                "#form",
+                "_ZEVAh29BWNeGORjY"
             )
             .then(
                 function (response) {
@@ -139,6 +140,11 @@ export const Footer = () => {
                     <Form theme={theme}>
                         <Slide direction="right" triggerOnce>
                             <form ref={form} onSubmit={sendEmail} id="form">
+                                <ReCAPTCHA
+                                    sitekey="6LfOiigoAAAAAL2nOTOe6wFtvLFbnsSu6XRG54JX"
+                                    onChange={(value) => console.log(value)}
+                                />
+
                                 <div className="name">
                                     <span>
                                         <CgProfile />
