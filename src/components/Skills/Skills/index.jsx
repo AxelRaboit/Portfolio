@@ -1,8 +1,9 @@
 import React from "react";
 import { Container, Cards } from "./SkillsElements";
 import { useTranslation } from "react-i18next";
-import { FaApple, FaLinux, FaNodeJs, FaCcStripe, FaDocker, FaGithub, FaReact, FaPhp, FaSymfony, FaGitlab, FaSass } from "react-icons/fa";
-import { SiMysql, SiJavascript, SiRedux, SiStrapi, SiExpress, SiTypescript, SiJquery } from "react-icons/si";
+import { FaApple, FaLinux, FaNodeJs, FaCcStripe, FaDocker, FaGithub, FaReact, FaPhp, FaSymfony, FaGitlab, FaSass, FaBootstrap } from "react-icons/fa";
+import { SiMysql, SiJavascript, SiRedux, SiStrapi, SiExpress, SiTypescript, SiJquery, SiMongodb, SiFirebase, SiJest } from "react-icons/si";
+import { BsGit } from "react-icons/bs";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Card } from "../Card";
 import { Slide } from "react-awesome-reveal";
@@ -30,6 +31,11 @@ export const Skills = () => {
         { Icon: FaApple, titleKey: "skills.cards.apple.title", descriptionKey: "skills.cards.apple.description", link: "https://fr.wikipedia.org/wiki/MacOS" },
         { Icon: SiMysql, titleKey: "skills.cards.mysql.title", descriptionKey: "skills.cards.mysql.description", link: "https://www.mysql.com/" },
         { Icon: FaSass,  titleKey: "skills.cards.sass.title", descriptionKey: "skills.cards.sass.description", link: "https://sass-lang.com/" },
+        { Icon: SiMongodb, titleKey: "skills.cards.mongodb.title", descriptionKey: "skills.cards.mongodb.description", link: "https://www.mongodb.com/" },
+        { Icon: FaBootstrap, titleKey: "skills.cards.bootstrap.title", descriptionKey: "skills.cards.bootstrap.description", link: "https://getbootstrap.com/" },
+        { Icon: SiFirebase, titleKey: "skills.cards.firebase.title", descriptionKey: "skills.cards.firebase.description", link: "https://firebase.google.com/" },
+        { Icon: SiJest, titleKey: "skills.cards.jest.title", descriptionKey: "skills.cards.jest.description", link: "https://jestjs.io/" },
+        { Icon: BsGit, titleKey: "skills.cards.git.title", descriptionKey: "skills.cards.git.description", link: "https://git-scm.com/" },
     ];
 
     return (

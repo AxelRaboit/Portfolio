@@ -121,6 +121,26 @@
         "sass": {
           "title": "Sass",
           "description": "J'ai appris Sass comme premier préprocesseur CSS."
+        },
+        "mongodb": {
+          "title": "MongoDB",
+          "description": "J'ai appris MongoDB en travaillant avec React JS sur des projets MERN."
+        },
+        "bootstrap": {
+          "title": "Bootstrap",
+          "description": "J'ai appris Bootstrap en travaillant avec Symfony."
+        },
+        "firebase": {
+          "title": "Firebase",
+          "description": "J'ai appris Firebase en travaillant avec React JS."
+        },
+        "jest": {
+          "title": "Jest",
+          "description": "J'ai appris Jest en travaillant en javascript vanilla."
+        },
+        "git": {
+          "title": "Git",
+          "description": "J'utilise Git pour mes projets personnels et professionnels."
         }
       }
     },
