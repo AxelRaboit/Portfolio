@@ -21,7 +21,7 @@ export const Footer = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        /* emailjs
+        emailjs
             .sendForm(
                 "service_9blub4n",
                 "template_uet5a6g",
@@ -35,7 +35,7 @@ export const Footer = () => {
                 function (error) {
                     console.log("FAILED...", error);
                 }
-            ); */
+            );
     };
 
     return (
