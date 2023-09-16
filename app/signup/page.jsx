@@ -1,89 +1,85 @@
-"use client"
-import { loginUser } from '@/helpers';
-import React, { useState } from 'react';
-import axios from 'axios';
+"use client";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-export default function SignUp() {
-  const [formData, setFormData] = useState({
-    fullname: '',
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+export default function SignupPage() {
+    const router = useRouter();
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+        fullname: "",
     });
-  };
+    const [buttonDisabled, setButtonDisabled] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const onSignup = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post("/api/signup", user);
+            console.log("Signup success", response.data);
+            router.push("/login");
+        } catch (error) {
+            console.log("Signup failed", error.message);
 
-    try {
-      const response = await axios.post('/api/auth', formData);
-
-      if (response.ok) {
-
-        const loginRes = await loginUser(formData.email, formData.password);
-
-        if (loginRes && !loginRes.ok) {
-          throw new Error(loginRes.statusText);
-        } else {
-          /* window.location.href = '/'; */
+            toast.error(error.message);
+        } finally {
+            setLoading(false);
         }
-        
+    };
 
-      } else {
-        console.error('Sign-up failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    useEffect(() => {
+        if (
+            user.email.length > 0 &&
+            user.password.length > 0 &&
+            user.fullname.length > 0
+        ) {
+            setButtonDisabled(false);
+        } else {
+            setButtonDisabled(true);
+        }
+    }, [user]);
 
-  return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullname">Full Name</label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            value={formData.fullname}
-            onChange={handleChange}
-            required
-          />
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+            <h1>{loading ? "Processing" : "Signup"}</h1>
+            <hr />
+            <label htmlFor="fullname">fullname</label>
+            <input
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                id="fullname"
+                type="text"
+                value={user.fullname}
+                onChange={(e) => setUser({ ...user, fullname: e.target.value })}
+                placeholder="fullname"
+            />
+            <label htmlFor="email">email</label>
+            <input
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                id="email"
+                type="text"
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+                placeholder="email"
+            />
+            <label htmlFor="password">password</label>
+            <input
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                id="password"
+                type="password"
+                value={user.password}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
+                placeholder="password"
+            />
+            <button
+                onClick={onSignup}
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+            >
+                {buttonDisabled ? "No signup" : "Signup"}
+            </button>
+            <Link href="/login">Visit login page</Link>
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <button type="submit">Sign Up</button>
-        </div>
-      </form>
-    </div>
-  );
+    );
 }

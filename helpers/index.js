@@ -1,15 +1,13 @@
 import { signIn } from 'next-auth/react'
+import jwt from "jsonwebtoken";
 
-export const loginUser = async (email, password) => {
-    const res = await signIn('credentials', {
-        redirect: false,
-        email,
-        password
-    })
-
-    if (res.error) {
-        return { error: res.error }
+export const getDataFromToken = (request) => {
+    try {
+        const token = request.cookies.get("token")?.value || '';
+        const decodedToken = jwt.verify(token, process.env.NEXT_PUBLIC_NEXTAUTH_SECRET);
+        return decodedToken.id;
+    } catch (error) {
+        throw new Error(error.message);
     }
 
-    return res
 }
