@@ -1,7 +1,9 @@
 {
     "global": {
       "available": "Disponible",
-      "unavailable": "Indisponible"
+      "unavailable": "Indisponible",
+      "login": "Connexion",
+      "logout": "Déconnexion"
     },
     "messages": {
       "form": {
@@ -55,7 +57,9 @@
         "testimonials": "Témoignages",
         "contact": "Contact",
         "cv": "CV",
-        "game": "Jeu"
+        "game": "Jeu",
+        "profile": "Profil",
+        "login": "Connexion"
       }
     },
     "skills": {

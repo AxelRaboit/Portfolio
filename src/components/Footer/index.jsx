@@ -18,6 +18,7 @@ import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReCAPTCHA from "react-google-recaptcha";
+import { DefaultButton } from "@/src/components";
 
 export const Footer = () => {
     const form = useRef();
@@ -235,17 +236,14 @@ export const Footer = () => {
                                         setIsValidatedRecaptcha(!!value);
                                     }}
                                 />
-                                <div className="container-submit">
-                                    <button
-                                        type="submit"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            validateForm();
-                                        }}
-                                    >
-                                        {t("contact.form.submit")}
-                                    </button>
-                                </div>
+                                <DefaultButton
+                                    type="submit"
+                                    text={t("contact.form.submit")}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        validateForm();
+                                    }}
+                                />
                             </form>
                         </Slide>
                     </Form>

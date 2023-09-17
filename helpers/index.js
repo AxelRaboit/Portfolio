@@ -1,4 +1,3 @@
-import { signIn } from 'next-auth/react'
 import jwt from "jsonwebtoken";
 
 export const getDataFromToken = (request) => {

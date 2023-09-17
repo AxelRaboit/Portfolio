@@ -1,7 +1,8 @@
 import { Header } from "./Header";
 import { Navbar } from "./Navbar";
 import { GlobalWrapper } from "./GlobalWrapper";
-import { DefaultButton } from "./Buttons";
+import { GlobalWrapperNoFooter } from "./GlobalWrapper/noFooter";
+import { DefaultButtonLink, DefaultButton } from "./Buttons";
 import { Home } from "./Home";
 import { ArrowUp } from "./ArrowUp";
 import { Profile } from "./Profile";
@@ -11,11 +12,16 @@ import { DynamicCv } from "./DynamicCv";
 import { TestimonialsComp } from "./Testimonials/Testimonials";
 import { TestimomnialsSlider } from "./Testimonials/Slider";
 import { Footer } from "./Footer";
+import { AdminProfile } from "./User/Profile/Admin";
+import { UserProfile } from "./User/Profile/User";
+import { LoginComp } from "./User/Login";
 
 export {
     Header,
     Navbar,
     GlobalWrapper,
+    GlobalWrapperNoFooter,
+    DefaultButtonLink,
     DefaultButton,
     Home,
     ArrowUp,
@@ -25,5 +31,8 @@ export {
     DynamicCv,
     TestimonialsComp,
     TestimomnialsSlider,
-    Footer
+    Footer,
+    AdminProfile,
+    UserProfile,
+    LoginComp,
 };

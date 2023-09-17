@@ -1,8 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Container, Cards } from "./SkillsElements";
 import { useTranslation } from "react-i18next";
-import { FaApple, FaLinux, FaNodeJs, FaCcStripe, FaDocker, FaGithub, FaReact, FaPhp, FaSymfony, FaGitlab, FaSass, FaBootstrap } from "react-icons/fa";
-import { SiMysql, SiJavascript, SiRedux, SiStrapi, SiExpress, SiTypescript, SiJquery, SiMongodb, SiFirebase, SiJest } from "react-icons/si";
+import axios from 'axios';
+import {
+    FaApple,
+    FaLinux,
+    FaNodeJs,
+    FaCcStripe,
+    FaDocker,
+    FaGithub,
+    FaReact,
+    FaPhp,
+    FaSymfony,
+    FaGitlab,
+    FaSass,
+    FaBootstrap
+} from "react-icons/fa";
+import {
+    SiMysql,
+    SiJavascript,
+    SiRedux,
+    SiStrapi,
+    SiExpress,
+    SiTypescript,
+    SiJquery,
+    SiMongodb,
+    SiFirebase,
+    SiJest
+} from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiTechnoHeart } from "react-icons/gi";
@@ -49,17 +74,17 @@ const getSkills = async () => {
             apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
         }
 
-        const res = await fetch(`${apiUrl}/api/skills`, {
-            cache: "no-store",
+        const response = await axios.get(`${apiUrl}/api/skills`, {
+            headers: {
+                'Cache-Control': 'no-store',
+            },
         });
 
-        if (!res.ok) {
-            throw new Error(
-                "Something went wrong while fetching skills data"
-            );
+        if (response.status !== 200) {
+            throw new Error("Something went wrong while fetching skills data");
         }
 
-        return res.json();
+        return response.data;
     } catch (error) {
         console.error(error);
     }

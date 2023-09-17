@@ -1,7 +1,9 @@
 {
     "global": {
       "available": "Available",
-      "unavailable": "Unavailable"
+      "unavailable": "Unavailable",
+      "login": "Login",
+      "logout": "Logout"
     },
     "messages": {
       "form": {
@@ -55,7 +57,9 @@
         "testimonials": "Testimonials",
         "contact": "Contact",
         "cv": "CV",
-        "game": "Game"
+        "game": "Game",
+        "profile": "Profile",
+        "login": "Login"
       }
     },
     "skills": {

@@ -1,3 +1,4 @@
-import { DefaultButton } from "./Default";
+import { DefaultButtonLink } from "./Default/ButtonLink";
+import { DefaultButton } from "./Default/Button";
 
-export { DefaultButton };
+export { DefaultButtonLink, DefaultButton };

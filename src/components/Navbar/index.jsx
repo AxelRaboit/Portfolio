@@ -1,9 +1,16 @@
-"use client"
-import React, { useEffect } from "react";
+"use client";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Container, NavLink, Flag } from "./NavbarElements";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import {
+    setCurrentUser,
+    selectCurrentUser,
+    selectUserIsLoggedIn,
+} from "@/src/redux/slices/user/UserSlice";
+import { FaUserAlt } from "react-icons/fa";
 
 import {
     selectCurrentLocale,
@@ -19,7 +26,6 @@ const links = [
     { href: "/#footer", label: "navbar.link.contact" },
     { href: "/cv", label: "navbar.link.cv" },
     { href: "/snake", label: "navbar.link.game" },
-    { href: "/signup", label: "SignUp" },
 ];
 
 const USAflag = "assets/flag/usa-flag.png";
@@ -32,6 +38,9 @@ export const Navbar = ({ bar }) => {
     const dispatch = useDispatch();
     const currentLocale = useSelector(selectCurrentLocale);
     const theme = useSelector(selectTheme);
+    const [userData, setUserData] = useState(null);
+    const userInformation = useSelector(selectCurrentUser);
+    const userIsLoggedIn = useSelector(selectUserIsLoggedIn);
 
     const flagSrc = currentLocale === english ? FRflag : USAflag;
 
@@ -43,6 +52,25 @@ export const Navbar = ({ bar }) => {
         }
     }, [flagSrc, i18n]);
 
+    // Make sure to only fetch user data if user is logged in if userInformation is null
+    useEffect(() => {
+        console.log(
+            "USER INFORMATION LOADED FROM REDUX IN NAVBAR",
+            userInformation
+        );
+        if (userInformation === null && userIsLoggedIn === true) {
+            const getUserDetails = async () => {
+                const res = await axios.get("/api/me");
+                console.log("res.data.data", res.data.data);
+                dispatch(setCurrentUser(res.data.data));
+            };
+
+            getUserDetails();
+        }
+
+        setUserData(userInformation);
+    }, [userInformation, userIsLoggedIn]);
+
     const changeLocale = () => {
         const newLocale = currentLocale === english ? french : english;
         dispatch(setLocale(newLocale));
@@ -53,6 +81,8 @@ export const Navbar = ({ bar }) => {
         dispatch(setTheme(newTheme));
     };
 
+    console.log("USER DATA IN NAVBAR", userInformation);
+
     return (
         <Container bar={bar ? 1 : 0} theme={theme}>
             {links.map((link, index) => (
@@ -60,6 +90,19 @@ export const Navbar = ({ bar }) => {
                     {t(link.label)}
                 </NavLink>
             ))}
+
+            {userData ? (
+                <NavLink href="/profile" theme={theme}>
+                    <div className="container-profile-account">
+                        <span className="user-icon">
+                            <FaUserAlt />
+                        </span>{" "}
+                        <span className="user-fullname">
+                            {userData.fullname}
+                        </span>
+                    </div>
+                </NavLink>
+            ) : null}
 
             <Flag
                 className="language-flag"

@@ -13,7 +13,7 @@ export const Container = styled.div`
         display: none;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         .bars {
             width: 40px;
             height: 40px;
