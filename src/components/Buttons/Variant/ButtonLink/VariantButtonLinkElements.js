@@ -22,7 +22,7 @@ export const Container = styled.button`
         color: var(--color-light);
         text-decoration: none;
         padding: 0.7rem 2rem;
-        background-color: var(--color-primary);
+        background-color: var(--color-dark);
         border: none;
         font-weight: 500;
         position: relative;

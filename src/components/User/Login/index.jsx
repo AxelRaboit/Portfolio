@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "@/src/redux/slices/user/UserSlice";
-import { DefaultButton } from "@/src/components";
+import { DefaultButton, VariantButtonLink } from "@/src/components";
 import { useTranslation } from "react-i18next";
 import {
     Container,
@@ -125,7 +125,11 @@ export const LoginComp = () => {
                         text={t("global.login")}
                         onClick={onLogin}
                     />
-                    <Link href="/signup" className="signup-button">Visit Signup page</Link>
+                    <VariantButtonLink
+                        text={t("Visit Signup page")}
+                        link="/signup"
+                        isTarget={false}
+                    />
                 </ContainerCTA>
             </FormContainer>
         </Container>

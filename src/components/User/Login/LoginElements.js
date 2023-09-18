@@ -75,25 +75,4 @@ export const ContainerCTA = styled.div`
     button.default-button {
         margin-right: 1rem;
     }
-
-    .signup-button {
-        padding: 0.7rem 2rem;
-        cursor: pointer;
-        background-color: var(--color-dark);
-        border: none;
-        font-weight: 500;
-        filter: var(--drop-shadow-green);
-        position: relative;
-        font-size: 0.83rem;
-        color: var(--color-primary);
-        text-decoration: none;
-
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            filter: var(--drop-shadow-green-darker);
-        }
-    }
 `;
