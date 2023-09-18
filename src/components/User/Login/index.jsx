@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -27,7 +27,7 @@ export const LoginComp = () => {
         email: "",
         password: "",
     });
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
 
     const notifySuccess = ({ message }) =>
@@ -85,7 +85,8 @@ export const LoginComp = () => {
 
             if (isValid) {
                 setLoading(true);
-                const response = await axios.post("/api/login", user);
+                const res = await axios.post("/api/login", user);
+                /* console.log("response", res.data); */
                 await fetchUserData();
                 notifySuccess({ message: t("messages.loginForm.success") });
                 router.push("/");
@@ -103,7 +104,6 @@ export const LoginComp = () => {
         <>
             <ToastContainer />
             <Container>
-                {/* <h1>{loading ? "Processing" : "Login"}</h1> */}
                 <FormContainer theme={theme}>
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <ContainerFormInput>
