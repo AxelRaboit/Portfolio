@@ -11,12 +11,12 @@ import {
     selectUserIsLoggedIn,
 } from "@/src/redux/slices/user/UserSlice";
 import { FaUserAlt } from "react-icons/fa";
-
 import {
     selectCurrentLocale,
     setLocale,
 } from "@/src/redux/slices/locale/LocaleSlice";
 import { selectTheme, setTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { i18nConfiguration } from "@/src/tools/initi18n";
 
 const links = [
     { href: "/", label: "navbar.link.home" },
@@ -46,22 +46,18 @@ export const Navbar = ({ bar }) => {
 
     useEffect(() => {
         if (flagSrc === USAflag) {
-            i18n.changeLanguage(french);
+            i18nConfiguration.changeLanguage(french);
         } else {
-            i18n.changeLanguage(english);
+            i18nConfiguration.changeLanguage(english);
         }
     }, [flagSrc, i18n]);
 
-    // Make sure to only fetch user data if user is logged in if userInformation is null
+    // Making sure to only fetch user data if user is logged in if userInformation is null
     useEffect(() => {
-        console.log(
-            "USER INFORMATION LOADED FROM REDUX IN NAVBAR",
-            userInformation
-        );
         if (userInformation === null && userIsLoggedIn === true) {
             const getUserDetails = async () => {
                 const res = await axios.get("/api/me");
-                console.log("res.data.data", res.data.data);
+                /* console.log("res.data.data", res.data.data); */
                 dispatch(setCurrentUser(res.data.data));
             };
 
@@ -80,8 +76,6 @@ export const Navbar = ({ bar }) => {
         const newTheme = theme === "light" ? "dark" : "light";
         dispatch(setTheme(newTheme));
     };
-
-    console.log("USER DATA IN NAVBAR", userInformation);
 
     return (
         <Container bar={bar ? 1 : 0} theme={theme}>

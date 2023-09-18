@@ -23,7 +23,6 @@ export const UserProfile = () => {
         toast.success("Logout successful");
         router.push("/");
     } catch (error) {
-        console.log(error.message);
         toast.error(error.message);
     }
 };

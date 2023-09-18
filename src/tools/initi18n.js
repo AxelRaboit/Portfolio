@@ -3,24 +3,20 @@ import { initReactI18next } from "react-i18next";
 import translationEN from "@/src/translation/en.json";
 import translationFR from "@/src/translation/fr.json";
 
-
-export const initi18n = () => {
-
-    const english = "en";
-
-    return i18n.use(initReactI18next).init({
-        resources: {
-            en: {
-                translation: translationEN,
-            },
-            fr: {
-                translation: translationFR,
-            },
+i18n.use(initReactI18next).init({
+    resources: {
+        en: {
+            translation: translationEN,
         },
-        lng: english,
-        fallbackLng: english,
-        interpolation: {
-            escapeValue: false,
+        fr: {
+            translation: translationFR,
         },
-    });
-};
+    },
+    lng: "en", // Default language
+    fallbackLng: "en",
+    interpolation: {
+        escapeValue: false,
+    },
+});
+
+export const i18nConfiguration = i18n;

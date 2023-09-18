@@ -7,6 +7,22 @@
       "signup": "Inscription"
     },
     "messages": {
+      "signupForm": {
+        "error": {
+          "fullname": "Veuillez entrer un nom valide.",
+          "email": "Veuillez entrer une adresse email valide.",
+          "password": "Veuillez entrer un mot de passe valide."
+        },
+        "success": "Votre compte a bien été créé. Vous pouvez maintenant vous connecter."
+      },
+      "loginForm": {
+        "error": {
+          "email": "Veuillez entrer une adresse email valide.",
+          "password": "Veuillez entrer un mot de passe valide.",
+          "notFound": "Aucun compte n'a été trouvé avec ces identifiants, ou une erreur est survenue."
+        },
+        "success": "Vous êtes maintenant connecté."
+      },
       "form": {
         "error": {
           "globalError": "Une erreur est survenue lors de l'envoi du message.",

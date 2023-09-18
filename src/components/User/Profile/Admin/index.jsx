@@ -51,7 +51,6 @@ export const AdminProfile = () => {
             notifySuccess({ message: "Logout success" });
             router.push("/");
         } catch (error) {
-            console.log(error.message);
             notifyError({ message: error.message });
         }
     };

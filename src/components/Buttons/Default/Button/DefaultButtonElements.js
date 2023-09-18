@@ -18,4 +18,14 @@ export const Button = styled.button`
     &:hover {
         filter: var(--drop-shadow-green-darker);
     }
+
+    &:disabled {
+        background-color: var(--color-not-allowed);
+        filter: var(--drop-shadow-green);
+        cursor: not-allowed;
+
+        &:hover {
+        filter: var(--drop-shadow-green-darker);
+    }
+    }
 `;

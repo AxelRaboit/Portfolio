@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { setCurrentUser } from "@/src/redux/slices/user/UserSlice";
+import { useSelector } from "react-redux";
+import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
 import { DefaultButton, VariantButtonLink } from "@/src/components";
 import { useTranslation } from "react-i18next";
 import {
@@ -14,11 +13,9 @@ import {
     FormInput,
     ContainerCTA,
     ContainerFormInput,
-} from "./LoginElements";
-import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+} from "./SignupElements";
 
-export const LoginComp = () => {
+export const SignupComp = () => {
     const router = useRouter();
     const theme = useSelector(selectTheme);
     const { t } = useTranslation();
@@ -26,9 +23,9 @@ export const LoginComp = () => {
     const [user, setUser] = React.useState({
         email: "",
         password: "",
+        fullname: "",
     });
     const [loading, setLoading] = React.useState(false);
-    const dispatch = useDispatch();
 
     const notifySuccess = ({ message }) =>
         toast.success(message, {
@@ -54,46 +51,57 @@ export const LoginComp = () => {
             theme: theme === "dark" ? "dark" : "light",
         });
 
-    const fetchUserData = async () => {
-        try {
-            const res = await axios.get("/api/me");
-            /* console.log("res.data.data", res.data.data); */
-
-            dispatch(setCurrentUser(res.data.data));
-        } catch (error) {
-            /* console.log("Error while fetching user data", error.message); */
-        }
+    const validateName = () => {
+        const regexName = /^[a-zA-ZÀ-ÿ]{2,40}[- ]{0,1}[a-zA-ZÀ-ÿ]{2,40}$/;
+        return regexName.test(user.fullname);
     };
 
-    const onLogin = async () => {
-        try {
-            let isValid = true;
+    const validateEmail = () => {
+        const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return regexEmail.test(user.email);
+    };
 
-            if (!user.email) {
+    const validatePassword = () => {
+        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        return regexPassword.test(user.password);
+    };
+
+    const onSignup = async () => {
+        let isValid = true;
+
+        try {
+            setLoading(true);
+
+            if (!validateName()) {
                 isValid = false;
                 notifyError({
-                    message: `${t("messages.loginForm.error.email")}`,
+                    message: `${t("messages.signupForm.error.fullname")}`,
                 });
             }
 
-            if (!user.password) {
+            if (!validateEmail()) {
                 isValid = false;
                 notifyError({
-                    message: `${t("messages.loginForm.error.password")}`,
+                    message: `${t("messages.signupForm.error.email")}`,
+                });
+            }
+
+            if (!validatePassword()) {
+                isValid = false;
+                notifyError({
+                    message: `${t("messages.signupForm.error.password")}`,
                 });
             }
 
             if (isValid) {
-                setLoading(true);
-                const response = await axios.post("/api/login", user);
-                await fetchUserData();
-                notifySuccess({ message: t("messages.loginForm.success") });
-                router.push("/");
+                const response = await axios.post("/api/signup", user);
+                notifySuccess({
+                    message: `${t("messages.signupForm.success")}`,
+                });
+                router.push("/login");
             }
         } catch (error) {
-            notifyError({
-                message: `${t("messages.loginForm.error.notFound")}`,
-            });
+            notifyError({ message: error.message });
         } finally {
             setLoading(false);
         }
@@ -103,8 +111,20 @@ export const LoginComp = () => {
         <>
             <ToastContainer />
             <Container>
-                {/* <h1>{loading ? "Processing" : "Login"}</h1> */}
                 <FormContainer theme={theme}>
+                    <FormLabel htmlFor="fullname">Full Name</FormLabel>
+                    <ContainerFormInput>
+                        <FormInput
+                            id="fullname"
+                            type="text"
+                            value={user.fullname}
+                            onChange={(e) =>
+                                setUser({ ...user, fullname: e.target.value })
+                            }
+                            placeholder="Full Name"
+                        />
+                    </ContainerFormInput>
+
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <ContainerFormInput>
                         <FormInput
@@ -117,6 +137,7 @@ export const LoginComp = () => {
                             placeholder="Email"
                         />
                     </ContainerFormInput>
+
                     <FormLabel htmlFor="password">Password</FormLabel>
                     <ContainerFormInput>
                         <FormInput
@@ -131,12 +152,15 @@ export const LoginComp = () => {
                     </ContainerFormInput>
                     <ContainerCTA>
                         <DefaultButton
-                            text={t("global.login")}
-                            onClick={onLogin}
+                            text={t("global.signup")}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                onSignup();
+                            }}
                         />
                         <VariantButtonLink
-                            text={t("global.signup")}
-                            link="/signup"
+                            text={t("global.login")}
+                            link="/login"
                             isTarget={false}
                         />
                     </ContainerCTA>

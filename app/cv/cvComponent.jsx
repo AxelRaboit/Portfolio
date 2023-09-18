@@ -3,12 +3,9 @@ import React from "react";
 import { GlobalWrapper, DefaultButton, DynamicCv } from "@/src/components";
 import { Container } from "./CVElements";
 import { useTranslation } from "react-i18next";
-import { initi18n } from "@/src/tools/initi18n";
 
 const CvComponent = () => {
     const { t } = useTranslation();
-
-    initi18n();
 
     return (
         <GlobalWrapper>

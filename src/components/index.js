@@ -15,6 +15,7 @@ import { Footer } from "./Footer";
 import { AdminProfile } from "./User/Profile/Admin";
 import { UserProfile } from "./User/Profile/User";
 import { LoginComp } from "./User/Login";
+import { SignupComp } from "./User/Signup";
 
 export {
     Header,
@@ -36,4 +37,5 @@ export {
     AdminProfile,
     UserProfile,
     LoginComp,
+    SignupComp
 };
