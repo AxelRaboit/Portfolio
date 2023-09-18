@@ -126,7 +126,7 @@ export const LoginComp = () => {
                         onClick={onLogin}
                     />
                     <VariantButtonLink
-                        text={t("Visit Signup page")}
+                        text={t("global.signup")}
                         link="/signup"
                         isTarget={false}
                     />

@@ -3,7 +3,8 @@
       "available": "Disponible",
       "unavailable": "Indisponible",
       "login": "Connexion",
-      "logout": "Déconnexion"
+      "logout": "Déconnexion",
+      "signup": "Inscription"
     },
     "messages": {
       "form": {
