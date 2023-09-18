@@ -8,7 +8,7 @@ export const Button = styled.button`
     font-weight: 500;
     filter: var(--drop-shadow-green);
     position: relative;
-    color: #fff;
+    color: var(--color-light);
     text-decoration: none;
 
     &:focus {

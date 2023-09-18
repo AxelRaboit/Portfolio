@@ -13,7 +13,7 @@ import {
     FormContainer,
     FormLabel,
     FormInput,
-    ContainerLoginCTA,
+    ContainerCTA,
     ContainerFormInput,
 } from "./LoginElements";
 import { useSelector } from "react-redux";
@@ -120,14 +120,14 @@ export const LoginComp = () => {
                         placeholder="Password"
                     />
                 </ContainerFormInput>
-                <ContainerLoginCTA>
+                <ContainerCTA>
                     <DefaultButton
                         text={t("global.login")}
                         onClick={onLogin}
                     />
-                </ContainerLoginCTA>
+                    <Link href="/signup" className="signup-button">Visit Signup page</Link>
+                </ContainerCTA>
             </FormContainer>
-            <Link href="/signup">Visit Signup page</Link>
         </Container>
     );
 };

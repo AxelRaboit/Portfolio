@@ -4,8 +4,7 @@ export const Container = styled.div`
     margin-top: 2rem;
     position: relative;
     padding: 2rem 0;
-    width: 80%;
-    max-width: 1280px;
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -72,4 +71,29 @@ export const FormInput = styled.input`
     }
 `;
 
-export const ContainerLoginCTA = styled.div``;
+export const ContainerCTA = styled.div`
+    button.default-button {
+        margin-right: 1rem;
+    }
+
+    .signup-button {
+        padding: 0.7rem 2rem;
+        cursor: pointer;
+        background-color: var(--color-dark);
+        border: none;
+        font-weight: 500;
+        filter: var(--drop-shadow-green);
+        position: relative;
+        font-size: 0.83rem;
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            filter: var(--drop-shadow-green-darker);
+        }
+    }
+`;
