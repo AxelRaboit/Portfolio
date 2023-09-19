@@ -23,7 +23,7 @@ const links = [
     { href: "/#skills", label: "navbar.link.skills" },
     { href: "/#projects", label: "navbar.link.projects" },
     { href: "/#testimonials", label: "navbar.link.testimonials" },
-    { href: "/#footer", label: "navbar.link.contact" },
+    { href: "/#contact", label: "navbar.link.contact" },
     { href: "/cv", label: "navbar.link.cv" },
     { href: "/snake", label: "navbar.link.game" },
 ];

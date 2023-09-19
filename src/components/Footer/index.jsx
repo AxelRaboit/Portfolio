@@ -126,7 +126,7 @@ export const Footer = () => {
         <>
             <ToastContainer />
             <Slide direction="left" delay={1} triggerOnce>
-                <Container id="footer">
+                <Container id="contact">
                     <Profile>
                         <h1>Portfolio</h1>
                         <div className="address">
