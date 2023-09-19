@@ -34,7 +34,7 @@ import { GiTechnoHeart } from "react-icons/gi";
 import { Card } from "../Card";
 import { Slide } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
-import { selectCurrentLocale } from "@/src/redux/slices/locale/LocaleSlice";
+import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 
 const iconMappings = {
     FaApple: FaApple,

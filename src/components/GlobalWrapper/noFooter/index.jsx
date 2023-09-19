@@ -6,8 +6,8 @@ import {
     Background,
 } from "./GlobalWrapperGlobalWrapperNoFooterElements";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
-import { selectScrollIsLocked } from "@/src/redux/slices/scrolllock/ScrolllockSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
+import { selectScrollIsLocked } from "@/app/GlobalRedux/Features/ScrolllockSlice";
 
 export const GlobalWrapperNoFooter = ({ children }) => {
     const theme = useSelector(selectTheme);

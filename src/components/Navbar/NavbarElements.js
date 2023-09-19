@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Container = styled.div`
     display: flex;
@@ -139,7 +140,7 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const Flag = styled.img`
+export const Flag = styled(Image)`
     cursor: pointer;
     margin-left: 1rem;
     width: 2rem;

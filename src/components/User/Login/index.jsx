@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "@/src/redux/slices/user/UserSlice";
+import { setCurrentUser } from "@/app/GlobalRedux/Features/UserSlice";
 import { DefaultButton, VariantButtonLink } from "@/src/components";
 import { useTranslation } from "react-i18next";
 import {
@@ -16,7 +16,7 @@ import {
     ContainerFormInput,
 } from "./LoginElements";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 
 export const LoginComp = () => {
     const router = useRouter();

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { DefaultButton, VariantButtonLink } from "@/src/components";
 import { useTranslation } from "react-i18next";
 import {

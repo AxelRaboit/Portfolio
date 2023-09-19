@@ -86,7 +86,10 @@ export const Profile = () => {
             </Slide>
             <Slide direction="right" triggerOnce>
                 <ProfileAvatar
-                    src="assets/profile/profile-avatar.png"
+                    loading="eager"
+                    width={500}
+                    height={500}
+                    src="/assets/profile/profile-avatar.png"
                     alt="profile avatar"
                 />
             </Slide>

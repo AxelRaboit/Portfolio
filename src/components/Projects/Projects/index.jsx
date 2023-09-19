@@ -5,7 +5,7 @@ import { SliderComp } from "../Slider";
 import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import axios from 'axios';
 
 const getProjects = async () => {

@@ -5,7 +5,7 @@ import { TestimomnialsSlider } from "@/src/components/Testimonials/Slider";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Slide } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
 import axios from 'axios';
 

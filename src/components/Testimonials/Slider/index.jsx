@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Header, Body, Footer } from "./TestimonialsSliderElements";
 import { IoIosQuote } from "react-icons/io";
 import { AiOutlineStar } from "react-icons/ai";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
 
 export const TestimomnialsSlider = (props) => {

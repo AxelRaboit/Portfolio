@@ -9,13 +9,13 @@ import {
     setCurrentUser,
     selectCurrentUser,
     selectUserIsLoggedIn,
-} from "@/src/redux/slices/user/UserSlice";
+} from "@/app/GlobalRedux/Features/UserSlice";
 import { FaUserAlt } from "react-icons/fa";
 import {
     selectCurrentLocale,
     setLocale,
-} from "@/src/redux/slices/locale/LocaleSlice";
-import { selectTheme, setTheme } from "@/src/redux/slices/theme/ThemeSlice";
+} from "@/app/GlobalRedux/Features/LocaleSlice";
+import { selectTheme, setTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { i18nConfiguration } from "@/src/tools/initi18n";
 
 const links = [
@@ -27,8 +27,8 @@ const links = [
     { href: "/cv", label: "navbar.link.cv" },
 ];
 
-const USAflag = "assets/flag/usa-flag.png";
-const FRflag = "assets/flag/france-flag.png";
+const USAflag = "/assets/flag/usa-flag.png";
+const FRflag = "/assets/flag/france-flag.png";
 const english = "en";
 const french = "fr";
 
@@ -98,8 +98,11 @@ export const Navbar = ({ bar }) => {
             ) : null}
 
             <Flag
+                loading="eager"
                 className="language-flag"
                 src={flagSrc}
+                width={30}
+                height={30}
                 alt="flag"
                 onClick={changeLocale}
             />

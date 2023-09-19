@@ -14,7 +14,7 @@ import { Slide } from "react-awesome-reveal";
 import { Container, Profile, Form } from "./FooterElements";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReCAPTCHA from "react-google-recaptcha";

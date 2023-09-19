@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import {} from './UserProfileElements';
-import { clearCurrentUser, selectCurrentUser } from "@/src/redux/slices/user/UserSlice";
+import { clearCurrentUser, selectCurrentUser } from "@/app/GlobalRedux/Features/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import axios from "axios";

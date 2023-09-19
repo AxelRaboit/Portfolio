@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.div`
     display: flex;
@@ -143,7 +144,7 @@ export const Social = styled.div`
     }
 `;
 
-export const ProfileAvatar = styled.img`
+export const ProfileAvatar = styled(Image)`
     width: 25rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;

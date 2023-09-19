@@ -1,6 +1,6 @@
 "use client";
 import { AdminProfile, UserProfile } from "@/src/components";
-import { selectCurrentUser } from "@/src/redux/slices/user/UserSlice";
+import { selectCurrentUser } from "@/app/GlobalRedux/Features/UserSlice";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";

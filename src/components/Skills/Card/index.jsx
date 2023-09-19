@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./CardElements";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
 import { CropText } from "@/src/tools/CropText";
 import { useTranslation } from "react-i18next";

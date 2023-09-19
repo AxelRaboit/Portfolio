@@ -4,14 +4,14 @@ import {} from "./AdminProfileElements";
 import {
     clearCurrentUser,
     selectCurrentUser,
-} from "@/src/redux/slices/user/UserSlice";
+} from "@/app/GlobalRedux/Features/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 
 export const AdminProfile = () => {
     const router = useRouter();
