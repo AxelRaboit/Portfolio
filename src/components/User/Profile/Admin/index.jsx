@@ -69,7 +69,7 @@ export const AdminProfile = () => {
                         </Linkk>
                     )}
 
-                    <Linkk href="/">{t("Liste des utilisateurs")}</Linkk>
+                    <Linkk href="/profile/admin/users">{t("Liste des utilisateurs")}</Linkk>
                     <Linkk href="/">{t("Liste des projets")}</Linkk>
                     <Linkk href="/">{t("Liste des témignages")}</Linkk>
                     <Linkk href="/">{t("Liste des compétences")}</Linkk>

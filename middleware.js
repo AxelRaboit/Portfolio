@@ -33,6 +33,9 @@ export const config = {
     '/login',
     '/signup',
     '/verifyemail',
-    '/api/admin/users'
+    '/api/admin/users',
+    '/profile/:id',
+    '/profile/admin/users',
+    '/profile/admin/users/:id',
   ]
 }
