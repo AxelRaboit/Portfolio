@@ -64,6 +64,14 @@
       "availability": {
         "yes": "En recherche de poste",
         "no": "En poste"
+      },
+      "admin": {
+        "link": {
+          "usersList": "Liste des utilisateurs",
+          "projectList": "Liste des projets",
+          "testimonialList": "Liste des témoignages",
+          "skillsList": "Liste des compétences"
+        }
       }
     },
     "navbar": {
