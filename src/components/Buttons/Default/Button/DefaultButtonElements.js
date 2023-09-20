@@ -5,7 +5,7 @@ export const Button = styled.button`
     cursor: pointer;
     background-color: var(--color-primary);
     border: none;
-    font-weight: 500;
+    font-family: var(--font-roboto-mono);
     filter: var(--drop-shadow-green);
     position: relative;
     color: var(--color-light);

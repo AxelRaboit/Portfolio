@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {} from "./AdminProfileElements";
+import { Container, Linkk, ContainerLinks, Title, LogoutLink } from "./AdminProfileElements";
 import {
     clearCurrentUser,
     selectCurrentUser,
@@ -9,9 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
+import { DefaultButtonLink, DefaultButton } from "@/src/components/Buttons";
+import { GlobalWrapperNoFooter } from "@/src/components";
+import Link from "next/link";
 
 export const AdminProfile = () => {
     const router = useRouter();
@@ -56,17 +58,26 @@ export const AdminProfile = () => {
     };
 
     return (
-        <div>
-            <h1>Admin Profile</h1>
-            <h2>
-                {currentUser !== null && (
-                    <Link href={`/profile/${currentUser._id}`}>
-                        {currentUser._id}
-                    </Link>
-                )}
-            </h2>
-            <hr />
-            <button onClick={logout}>{t("global.logout")}</button>
-        </div>
+        <GlobalWrapperNoFooter>
+            <Container className="container">
+                <Title>Admin Profile</Title>
+
+                <ContainerLinks>
+                    {currentUser !== null && (
+                        <Linkk href={`/profile/${currentUser._id}`}>
+                            {t("Mon profile")}
+                        </Linkk>
+                    )}
+
+                    <Linkk href="/">{t("Liste des utilisateurs")}</Linkk>
+                    <Linkk href="/">{t("Liste des projets")}</Linkk>
+                    <Linkk href="/">{t("Liste des témignages")}</Linkk>
+                    <Linkk href="/">{t("Liste des compétences")}</Linkk>
+                    <LogoutLink href="#" onClick={logout}>
+                        {t("global.logout")}
+                    </LogoutLink>
+                </ContainerLinks>
+            </Container>
+        </GlobalWrapperNoFooter>
     );
 };

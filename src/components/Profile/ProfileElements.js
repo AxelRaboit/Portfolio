@@ -68,7 +68,6 @@ export const Texts = styled.div`
 
     h1 {
         font-size: 2rem;
-        font-family: "Secular One", sans-serif;
         letter-spacing: 2px;
         color: var(--color-primary);
     }

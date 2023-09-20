@@ -9,7 +9,6 @@ export const metadata = {
     keywords: "cv, curriculum vitae, resume",
 }
 
-
 const cv = () => {
     return (
         <CvComponent />

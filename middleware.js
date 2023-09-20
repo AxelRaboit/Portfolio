@@ -33,6 +33,6 @@ export const config = {
     '/login',
     '/signup',
     '/verifyemail',
-    '/api/users'
+    '/api/admin/users'
   ]
 }

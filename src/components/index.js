@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "./Header";
 import { Navbar } from "./Navbar";
 import { GlobalWrapper } from "./GlobalWrapper";
@@ -16,6 +17,7 @@ import { AdminProfile } from "./User/Profile/Admin";
 import { UserProfile } from "./User/Profile/User";
 import { LoginComp } from "./User/Login";
 import { SignupComp } from "./User/Signup";
+import { AdminUserList } from "./Admin/UserList";
 
 export {
     Header,
@@ -37,5 +39,6 @@ export {
     AdminProfile,
     UserProfile,
     LoginComp,
-    SignupComp
+    SignupComp,
+    AdminUserList,
 };
