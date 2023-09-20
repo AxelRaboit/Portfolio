@@ -10,6 +10,7 @@ export const Title = styled.h1`
 export const UserList = styled.div`
     li {
         list-style-type: none;
+        margin-bottom: 0.5rem;
     }
 `;
 
@@ -23,7 +24,6 @@ export const Linkk = styled(Link)`
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    margin-bottom: 0.5rem;
 
     &:hover {
         text-decoration: underline;
