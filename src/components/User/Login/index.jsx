@@ -90,6 +90,7 @@ export const LoginComp = () => {
             if (isValid) {
                 setLoading(true);
                 await axios.post("/api/login", user);
+
                 await fetchUserData();
 
                 notifySuccess({ message: t("messages.loginForm.success") });
