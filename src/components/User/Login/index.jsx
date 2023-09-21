@@ -57,11 +57,15 @@ export const LoginComp = () => {
     const fetchUserData = async () => {
         try {
             const res = await axios.get("/api/me");
-            /* console.log("res.data.data", res.data.data); */
+            console.log("res.data.data", res.data.data);
 
             dispatch(setCurrentUser(res.data.data));
         } catch (error) {
-            /* console.log("Error while fetching user data", error.message); */
+            console.log("Error while fetching user data", error.message);
+
+            notifyError({
+                message: `${t("messages.loginForm.error.fetching")}`,
+            });
         }
     };
 
@@ -85,9 +89,9 @@ export const LoginComp = () => {
 
             if (isValid) {
                 setLoading(true);
-                const res = await axios.post("/api/login", user);
-                /* console.log("response", res.data); */
+                await axios.post("/api/login", user);
                 await fetchUserData();
+
                 notifySuccess({ message: t("messages.loginForm.success") });
                 router.push("/");
             }
@@ -95,6 +99,7 @@ export const LoginComp = () => {
             notifyError({
                 message: `${t("messages.loginForm.error.notFound")}`,
             });
+            console.log("Error while logging in", error.message);
         } finally {
             setLoading(false);
         }

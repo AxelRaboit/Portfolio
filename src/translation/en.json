@@ -19,7 +19,8 @@
         "error": {
           "email": "Please enter a valid email address.",
           "password": "Please enter a valid password.",
-          "notFound": "No account found with this credentials, or an error has occurred."
+          "notFound": "No account found with this credentials, or an error has occurred.",
+          "fetching": "An error has occurred while sending your message. Please try again later."
         },
         "success": "You have been logged in successfully."
       },

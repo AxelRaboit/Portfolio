@@ -1,11 +1,13 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
 
 export function middleware(request) {
 
   const path = request.nextUrl.pathname
 
+  // If the user is already logged in and tries to acces these pages, redirect to root
   const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyemail'
 
+  // Token is the JWT token that we use to authenticate the user
   const token = request.cookies.get('token')?.value || ''
 
   const isSignupActivated = process.env.NEXT_PUBLIC_ACTIVATE_SIGNUP === "true";
