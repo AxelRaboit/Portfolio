@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Logo } from "./HeaderElements";
 import { FaDev } from "react-icons/fa";
 import { Navbar } from "@/src/components";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
-import { setIsLocked } from "@/src/redux/slices/scrolllock/ScrolllockSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
+import { setIsLocked } from "@/app/GlobalRedux/Features/ScrolllockSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 

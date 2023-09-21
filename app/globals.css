@@ -1,8 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Secular One', sans-serif;
+  font-family: var(--font-roboto-mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-roboto-mono);
 }
 
 code {
@@ -11,6 +15,9 @@ code {
 }
 
 :root {
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto-mono: 'Roboto Mono', monospace;
+  --font-rubik: 'Rubik', sans-serif;
   --color-lighter-grey: linear-gradient(
       159deg,
       rgb(31, 31, 40) 0%,
@@ -28,8 +35,9 @@ code {
   --color-red: #ff4d4d;
   --color-green: #00ff80;
   --color-yellow: #ffcc00;
-  --drop-shadow-green: drop-shadow(0px 10px 10px #01be9551);
-  --drop-shadow-green-darker: drop-shadow(0px 10px 10px #01be9570);
+  --color-not-allowed: #999999;
+  --drop-shadow-green: drop-shadow(0px 3px 8px #01be9551);
+  --drop-shadow-green-darker: drop-shadow(0px 5px 9px #01be9570);
 }
 
 * {
@@ -55,24 +63,4 @@ li {
 
 li > ul {
   margin-left: 1rem;
-}
-
-/* CSS pour personnaliser le thème "light" */
-.grecaptcha-badge {
-  background-color: red; /* Changez cette couleur en fonction de vos besoins */
-  border-radius: 5px;
-}
-
-.grecaptcha-badge:hover {
-  background-color: blue; /* Changez cette couleur en fonction de vos besoins */
-}
-
-/* CSS pour personnaliser le thème "dark" */
-.grecaptcha-badge.dark {
-  background-color: green; /* Changez cette couleur en fonction de vos besoins */
-  border-radius: 5px;
-}
-
-.grecaptcha-badge.dark:hover {
-  background-color: purple; /* Changez cette couleur en fonction de vos besoins */
 }

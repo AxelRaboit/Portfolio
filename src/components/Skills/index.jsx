@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./Card/CardElements";
 import {
     selectTheme,
-} from "../../redux/slices/theme/ThemeSlice";
+} from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
 import CropText from "../../tools/CropText";
 import { useTranslation } from "react-i18next";

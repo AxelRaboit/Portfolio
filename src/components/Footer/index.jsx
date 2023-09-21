@@ -14,10 +14,11 @@ import { Slide } from "react-awesome-reveal";
 import { Container, Profile, Form } from "./FooterElements";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReCAPTCHA from "react-google-recaptcha";
+import { DefaultButton } from "@/src/components";
 
 export const Footer = () => {
     const form = useRef();
@@ -106,13 +107,13 @@ export const Footer = () => {
         if (isValid) {
             emailjs.sendForm(serviceId, templateId, "#form", userId).then(
                 function (response) {
-                    console.log("SUCCESS!", response.status, response.text);
+                    /* console.log("SUCCESS!", response.status, response.text); */
                     notifySuccess({
                         message: `${t("messages.form.success")}`,
                     });
                 },
                 function (error) {
-                    console.log("FAILED...", error);
+                    /* console.log("FAILED...", error); */
                     notifyError({
                         message: `${t("messages.form.error.globalError")}`,
                     });
@@ -125,7 +126,7 @@ export const Footer = () => {
         <>
             <ToastContainer />
             <Slide direction="left" delay={1} triggerOnce>
-                <Container id="footer">
+                <Container id="contact">
                     <Profile>
                         <h1>Portfolio</h1>
                         <div className="address">
@@ -235,17 +236,14 @@ export const Footer = () => {
                                         setIsValidatedRecaptcha(!!value);
                                     }}
                                 />
-                                <div className="container-submit">
-                                    <button
-                                        type="submit"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            validateForm();
-                                        }}
-                                    >
-                                        {t("contact.form.submit")}
-                                    </button>
-                                </div>
+                                <DefaultButton
+                                    type="submit"
+                                    text={t("contact.form.submit")}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        validateForm();
+                                    }}
+                                />
                             </form>
                         </Slide>
                     </Form>

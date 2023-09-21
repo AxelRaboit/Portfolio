@@ -5,7 +5,8 @@ import { SliderComp } from "../Slider";
 import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
+import axios from 'axios';
 
 const getProjects = async () => {
     try {
@@ -17,17 +18,17 @@ const getProjects = async () => {
             apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
         }
 
-        const res = await fetch(`${apiUrl}/api/projects`, {
-            cache: "no-store",
+        const response = await axios.get(`${apiUrl}/api/projects`, {
+            headers: {
+                'Cache-Control': 'no-store',
+            },
         });
 
-        if (!res.ok) {
-            throw new Error(
-                "Something went wrong while fetching projects data"
-            );
+        if (response.status !== 200) {
+            throw new Error("Something went wrong while fetching projects data");
         }
 
-        return res.json();
+        return response.data;
     } catch (error) {
         console.error(error);
     }

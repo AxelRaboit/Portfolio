@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useTranslation } from "react-i18next";
 import { CropText } from "@/src/tools/CropText";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container } from "./ProjectElements";
-import { selectCurrentLocale } from "@/src/redux/slices/locale/LocaleSlice";
+import { Container, ProjectImage } from "./ProjectElements";
+import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 
 export const Project = (props) => {
     const theme = useSelector(selectTheme);
@@ -31,7 +31,13 @@ export const Project = (props) => {
             theme={theme}
             availability={isAvailable ? 1 : 0}
         >
-            <img src={img ? img : defaultImg} alt="project" />
+            <ProjectImage
+                src={img ? img : defaultImg}
+                alt="project"
+                loading="eager"
+                width={300}
+                height={300}
+            />
             <div className="content">
                 <h1>{currentLocale === english ? nameEN : nameFR}</h1>
                 <div className="availability">

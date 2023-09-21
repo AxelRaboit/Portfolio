@@ -1,5 +1,6 @@
 import "./globals.css";
-import { LayoutComponent } from "./layoutComponent";
+import { Providers } from "./GlobalRedux/provider";
+
 
 export const metadata = {
     title: {
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <LayoutComponent children={children } />
+                <Providers>{children}</Providers>
             </body>
         </html>
     );

@@ -5,8 +5,9 @@ import { TestimomnialsSlider } from "@/src/components/Testimonials/Slider";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Slide } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
+import axios from 'axios';
 
 const getTestimonials = async () => {
     try {
@@ -18,22 +19,21 @@ const getTestimonials = async () => {
             apiUrl = process.env.NEXT_PUBLIC_LOCAL_URL;
         }
 
-        const res = await fetch(`${apiUrl}/api/testimonials`, {
-            cache: "no-store",
+        const response = await axios.get(`${apiUrl}/api/testimonials`, {
+            headers: {
+                'Cache-Control': 'no-store',
+            },
         });
 
-        if (!res.ok) {
-            throw new Error(
-                "Something went wrong while fetching testimonials data"
-            );
+        if (response.status !== 200) {
+            throw new Error("Something went wrong while fetching testimonials data");
         }
 
-        return res.json();
+        return response.data;
     } catch (error) {
         console.error(error);
     }
 };
-
 
 var settings = {
     dots: true,
@@ -77,10 +77,9 @@ export const TestimonialsComp = () => {
     const theme = useSelector(selectTheme);
     const [testimonials, setTestimonials] = useState([]);
     let testimonialsContent = "";
-    
-    
+
     useEffect(() => {
-        const fetchSkills = async () => {
+        const fetchTestimonials = async () => {
             try {
                 const { testimonials } = await getTestimonials();
                 setTestimonials(testimonials);
@@ -88,10 +87,10 @@ export const TestimonialsComp = () => {
                 console.error(error);
             }
         };
-        
-        fetchSkills();
+
+        fetchTestimonials();
     }, []);
-    
+
     testimonialsContent = testimonials.map((item, i) => (
         <TestimomnialsSlider item={item} key={i} />
     ));

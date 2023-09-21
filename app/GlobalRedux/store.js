@@ -1,18 +1,25 @@
 import {configureStore} from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import {combineReducers} from "redux";
-import { persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
-
-import localeReducer from './slices/locale/LocaleSlice';
-import themeReducer from './slices/theme/ThemeSlice';
-import scrolllockReducer from './slices/scrolllock/ScrolllockSlice';
+import localeReducer from './Features/LocaleSlice';
+import themeReducer from './Features/ThemeSlice';
+import scrolllockReducer from './Features/ScrolllockSlice';
 
 const reducers = combineReducers({
   locale: localeReducer,
   theme: themeReducer,
-  scrolllock: scrolllockReducer
-
+  scrolllock: scrolllockReducer,
 });
 
 const persistConfig = {
@@ -22,10 +29,8 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
-const store = configureStore({
+export const store = configureStore({
     reducer: persistedReducer,
     devTools: process.env.NODE_ENV !== 'production',
     middleware: [thunk]
 });
-
-export default store;

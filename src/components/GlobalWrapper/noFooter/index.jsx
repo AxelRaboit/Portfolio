@@ -4,13 +4,12 @@ import {
     GlobalStyle,
     Container,
     Background,
-} from "./GlobalWrapperElements";
+} from "./GlobalWrapperGlobalWrapperNoFooterElements";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { selectScrollIsLocked } from "@/app/GlobalRedux/Features/ScrolllockSlice";
-import { Footer } from "@/src/components";
 
-export const GlobalWrapper = ({ children }) => {
+export const GlobalWrapperNoFooter = ({ children }) => {
     const theme = useSelector(selectTheme);
     const scrollIsLocked = useSelector(selectScrollIsLocked);
 
@@ -24,9 +23,6 @@ export const GlobalWrapper = ({ children }) => {
                 <Header />
             </Background>
             {children}
-            <Background theme={theme}>
-                <Footer />
-            </Background>
         </Container>
     );
 };

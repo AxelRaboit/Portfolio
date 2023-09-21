@@ -5,7 +5,6 @@ export const Container = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
-    font-weight: 500;
     filter: var(--drop-shadow-green);
     position: relative;
 
@@ -19,12 +18,12 @@ export const Container = styled.button`
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff;
+        color: var(--color-light);
         text-decoration: none;
         padding: 0.7rem 2rem;
         background-color: var(--color-primary);
         border: none;
-        font-weight: 500;
+        font-family: var(--font-roboto-mono);
         position: relative;
     }
 

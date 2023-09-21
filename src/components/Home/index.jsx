@@ -4,7 +4,7 @@ import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { Slide } from "react-awesome-reveal";
 import { ArrowUp } from "@/src/components/ArrowUp";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/src/redux/slices/theme/ThemeSlice";
+import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 
 export const Home = () => {
     const theme = useSelector(selectTheme);

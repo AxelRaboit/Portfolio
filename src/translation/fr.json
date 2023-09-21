@@ -1,9 +1,29 @@
 {
     "global": {
       "available": "Disponible",
-      "unavailable": "Indisponible"
+      "unavailable": "Indisponible",
+      "login": "Connexion",
+      "logout": "Déconnexion",
+      "signup": "Inscription"
     },
     "messages": {
+      "signupForm": {
+        "error": {
+          "fullname": "Veuillez entrer un nom valide.",
+          "email": "Veuillez entrer une adresse email valide.",
+          "password": "Veuillez entrer un mot de passe valide."
+        },
+        "success": "Votre compte a bien été créé. Vous pouvez maintenant vous connecter."
+      },
+      "loginForm": {
+        "error": {
+          "email": "Veuillez entrer une adresse email valide.",
+          "password": "Veuillez entrer un mot de passe valide.",
+          "notFound": "Aucun compte n'a été trouvé avec ces identifiants, ou une erreur est survenue.",
+          "fetching": "Une erreur est survenue lors de la connexion."
+        },
+        "success": "Vous êtes maintenant connecté."
+      },
       "form": {
         "error": {
           "globalError": "Une erreur est survenue lors de l'envoi du message.",
@@ -39,12 +59,20 @@
       "hello": "Bonjour",
       "im": "Je suis",
       "webDeveloper": "Développeur Web",
-      "presentation": "Je suis un développeur web basé en France. J'ai une passion pour le design web et j'aime créer pour le web et les appareils mobiles.",
+      "presentation": "Développeur web basé en France, je suis passionné par le web design et je prends plaisir à concevoir des expériences aussi bien pour le web que pour les appareils mobiles. J'ai débuté mon parcours en utilisant PHP avec le framework Symfony et MySQL en tant que mes premiers outils de développement web, mais j'ai également acquis de l'expérience en JavaScript, React, NodeJS, ExpressJS et MongoDB.",
       "cta": "Parlons",
       "checkOut": "Découvrez mon",
       "availability": {
         "yes": "En recherche de poste",
         "no": "En poste"
+      },
+      "admin": {
+        "link": {
+          "usersList": "Liste des utilisateurs",
+          "projectList": "Liste des projets",
+          "testimonialList": "Liste des témoignages",
+          "skillsList": "Liste des compétences"
+        }
       }
     },
     "navbar": {
@@ -54,8 +82,8 @@
         "projects": "Projets",
         "testimonials": "Témoignages",
         "contact": "Contact",
-        "cv": "CV",
-        "game": "Jeu"
+        "profile": "Profil",
+        "login": "Connexion"
       }
     },
     "skills": {
@@ -70,8 +98,7 @@
     "cv": {
       "title": "Mon",
       "titleComplement": "CV",
-      "download": "Télécharger mon CV",
-      "downloadComplement": "Mon CV au format PDF."
+      "download": "Télécharger mon CV"
     },
     "projects": {
       "title": "Projets",
