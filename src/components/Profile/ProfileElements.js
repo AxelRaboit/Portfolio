@@ -6,16 +6,40 @@ export const Container = styled.div`
     gap: 2rem;
     z-index: 1;
 
-    .container-profile-cta {
-        margin-top: 3rem;
-    }
-
     @media (max-width: 840px) {
         width: 90%;
     }
 
     @media (max-width: 940px) {
         flex-direction: column;
+    }
+`;
+
+export const ContainerButtons = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+
+    button:first-child {
+        margin: 1rem 1rem 1rem 0;
+    }
+    
+    button:last-child {
+        margin: 1rem 0 1rem 0;
+    }
+
+    @media (max-width: 940px) {
+        width: 100%;
+        button {
+            width: 100%;
+        }
+
+        button:first-child {
+            margin: 1rem 0 1rem 0;
+        }
+
+        button:last-child {
+            margin: 1rem 0 1rem 0;
+        }
     }
 `;
 

@@ -59,7 +59,7 @@
       "hello": "Hello",
       "im": "I'm",
       "webDeveloper": "Web Developer",
-      "presentation": "I am a web developer based in France. I have a passion for web design and love to create for web and mobile devices.",
+      "presentation": "A web developer based in France, I'm passionate about web design and enjoy designing experiences for both the web and mobile devices. I started out using PHP with the Symfony framework and MySQL as my first web development tools, but I've also gained experience in JavaScript, React, NodeJS, ExpressJS and MongoDB.",
       "cta": "Let's talk",
       "checkOut": "Check out my",
       "availability": {
@@ -82,7 +82,6 @@
         "projects": "Projects",
         "testimonials": "Testimonials",
         "contact": "Contact",
-        "cv": "CV",
         "profile": "Profile",
         "login": "Login"
       }
@@ -99,8 +98,7 @@
     "cv": {
       "title": "My",
       "titleComplement": "CV",
-      "download": "Download my CV",
-      "downloadComplement": "My CV in PDF format."
+      "download": "Download my CV"
     },
     "projects": {
       "title": "Recent",

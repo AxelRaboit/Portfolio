@@ -59,7 +59,7 @@
       "hello": "Bonjour",
       "im": "Je suis",
       "webDeveloper": "Développeur Web",
-      "presentation": "Je suis un développeur web basé en France. J'ai une passion pour le design web et j'aime créer pour le web et les appareils mobiles.",
+      "presentation": "Développeur web basé en France, je suis passionné par le web design et je prends plaisir à concevoir des expériences aussi bien pour le web que pour les appareils mobiles. J'ai débuté mon parcours en utilisant PHP avec le framework Symfony et MySQL en tant que mes premiers outils de développement web, mais j'ai également acquis de l'expérience en JavaScript, React, NodeJS, ExpressJS et MongoDB.",
       "cta": "Parlons",
       "checkOut": "Découvrez mon",
       "availability": {
@@ -82,7 +82,6 @@
         "projects": "Projets",
         "testimonials": "Témoignages",
         "contact": "Contact",
-        "cv": "CV",
         "profile": "Profil",
         "login": "Connexion"
       }
@@ -99,8 +98,7 @@
     "cv": {
       "title": "Mon",
       "titleComplement": "CV",
-      "download": "Télécharger mon CV",
-      "downloadComplement": "Mon CV au format PDF."
+      "download": "Télécharger mon CV"
     },
     "projects": {
       "title": "Projets",

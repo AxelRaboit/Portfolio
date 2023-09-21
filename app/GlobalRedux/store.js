@@ -15,14 +15,11 @@ import thunk from 'redux-thunk';
 import localeReducer from './Features/LocaleSlice';
 import themeReducer from './Features/ThemeSlice';
 import scrolllockReducer from './Features/ScrolllockSlice';
-import userReducer from './Features/UserSlice';
 
 const reducers = combineReducers({
   locale: localeReducer,
   theme: themeReducer,
   scrolllock: scrolllockReducer,
-  user: userReducer
-
 });
 
 const persistConfig = {
