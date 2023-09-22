@@ -22,6 +22,8 @@ export const Profile = () => {
 
     const [availability, setAvailability] = useState(false);
 
+    const cvPdf = process.env.NEXT_PUBLIC_CV_PDF_LINK;
+
     return (
         <Container className="container">
             <Slide direction="left" triggerOnce>
@@ -59,7 +61,7 @@ export const Profile = () => {
                             link="#contact"
                             isTarget={false}
                         />
-                        <DefaultButtonLink text={t("cv.download")} link="#" />
+                        <DefaultButtonLink text={t("cv.download")} link={cvPdf} isTarget={true} />
                     </ContainerButtons>
                     <Social>
                         <p>{t("profile.checkOut")}</p>

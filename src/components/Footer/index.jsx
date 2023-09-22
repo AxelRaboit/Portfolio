@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
@@ -25,6 +25,11 @@ export const Footer = () => {
     const { t } = useTranslation();
     const theme = useSelector(selectTheme);
     const [isValidatedRecaptcha, setIsValidatedRecaptcha] = useState(false);
+    const [subject, setSubject] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [phone, setPhone] = useState("");
 
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -56,41 +61,56 @@ export const Footer = () => {
         });
 
     const validateForm = () => {
-        const fullname = document.querySelector(
-            "#form input[name='user_name']"
-        );
-        const email = document.querySelector("#form input[name='user_email']");
-        const message = document.querySelector(
-            "#form textarea[name='message']"
-        );
 
+        const regexSubject = new RegExp(
+            "^[a-zA-ZÀ-ÿ\s,. '-]{1,200}$"
+        );
         const regexFullname = new RegExp(
             "^[a-zA-ZÀ-ÿ]{2,40}[- ]{0,1}[a-zA-ZÀ-ÿ]{2,40}$"
         );
         const regexEmail = new RegExp(
             "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"
         );
+        
         const regexMessage = new RegExp(
-            "^[a-zA-ZÀ-ÿ0-9.,;:!?'\"()@&$€£%*+=s-]{2,500}$"
+            "^[a-zA-ZÀ-ÿ\s,. '-]{1,1000}$"
+        );
+
+        const regexPhone = new RegExp(
+            "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$"
         );
 
         let isValid = true;
 
-        if (!regexFullname.test(fullname.value)) {
+        if (!regexSubject.test(subject)) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.subject")}`,
+            });
+        }
+
+        if (!regexFullname.test(fullName)) {
             isValid = false;
             notifyError({
                 message: `${t("messages.form.error.fullname")}`,
             });
         }
 
-        if (!regexEmail.test(email.value)) {
+        if (!regexEmail.test(email)) {
             isValid = false;
             notifyError({
                 message: `${t("messages.form.error.email")}`,
             });
         }
 
-        if (!regexMessage.test(message.value)) {
+        if (!regexPhone.test(phone)) {
+            isValid = false;
+            notifyError({
+                message: `${t("messages.form.error.phone")}`,
+            });
+        }
+
+        if (!regexMessage.test(message)) {
             isValid = false;
             notifyError({
                 message: `${t("messages.form.error.message")}`,
@@ -105,15 +125,14 @@ export const Footer = () => {
         }
 
         if (isValid) {
-            emailjs.sendForm(serviceId, templateId, "#form", userId).then(
+
+            emailjs.sendForm(serviceId, templateId, '#form', userId).then(
                 function (response) {
-                    /* console.log("SUCCESS!", response.status, response.text); */
                     notifySuccess({
                         message: `${t("messages.form.success")}`,
                     });
                 },
                 function (error) {
-                    /* console.log("FAILED...", error); */
                     notifyError({
                         message: `${t("messages.form.error.globalError")}`,
                     });
@@ -191,6 +210,19 @@ export const Footer = () => {
                     <Form theme={theme}>
                         <Slide direction="right" triggerOnce>
                             <form ref={form} onSubmit={validateForm} id="form">
+                                <div className="subject">
+                                    <span>
+                                        <HiOutlineMailOpen />
+                                    </span>
+                                    <input
+                                        type="text"
+                                        name="subject"
+                                        placeholder={`${t(
+                                            "contact.form.subject"
+                                        )}...`}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                    />
+                                </div>
                                 <div className="name">
                                     <span>
                                         <CgProfile />
@@ -201,6 +233,7 @@ export const Footer = () => {
                                         placeholder={`${t(
                                             "contact.form.fullname"
                                         )}...`}
+                                        onChange={(e) => setFullName(e.target.value)}
                                     />
                                 </div>
                                 <div className="email">
@@ -213,6 +246,20 @@ export const Footer = () => {
                                         placeholder={`${t(
                                             "contact.form.email"
                                         )}...`}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </div>
+                                <div className="phone">
+                                    <span>
+                                        <FiPhoneCall />
+                                    </span>
+                                    <input
+                                        type="tel"
+                                        name="user_phone"
+                                        placeholder={`${t(
+                                            "contact.form.phone"
+                                        )}...`}
+                                        onChange={(e) => setPhone(e.target.value)}
                                     />
                                 </div>
                                 <div className="message">
@@ -226,6 +273,7 @@ export const Footer = () => {
                                         placeholder={`${t(
                                             "contact.form.message"
                                         )}...`}
+                                        onChange={(e) => setMessage(e.target.value)}
                                     ></textarea>
                                 </div>
                                 <ReCAPTCHA

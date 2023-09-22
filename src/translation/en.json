@@ -31,6 +31,8 @@
           "recaptcha": "Please check the reCAPTCHA.",
           "fullname": "Please enter a valid fullname.",
           "email": "Please enter a valid email address.",
+          "phone": "Please enter a valid phone number.",
+          "subject": "Please enter a valid subject.",
           "message": "Please enter a valid message."
         },
         "success": "Your message has been sent successfully."
@@ -52,6 +54,8 @@
         "fullname": "Fullname",
         "email": "Email",
         "message": "Message",
+        "phone": "Phone",
+        "subject": "Subject",
         "submit":"Submit"
       }
     },
