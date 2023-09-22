@@ -129,7 +129,9 @@ export const Form = styled.div`
 
         .name,
         .email,
-        .message {
+        .message,
+        .subject,
+        .phone {
             display: flex;
             border: 1px solid gray;
             margin-bottom: 0.5rem;

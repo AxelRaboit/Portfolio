@@ -31,6 +31,8 @@
           "recaptcha": "Veuillez cocher la case reCAPTCHA.",
           "fullname": "Veuillez entrer un nom valide.",
           "email": "Veuillez entrer une adresse email valide.",
+          "phone": "Veuillez entrer un numéro de téléphone valide.",
+          "subject": "Veuillez entrer un sujet valide.",
           "message": "Veuillez entrer un message valide."
         },
         "success": "Votre message a bien été envoyé."
@@ -52,6 +54,8 @@
         "fullname": "Nom complet",
         "email": "Email",
         "message": "Message",
+        "phone": "Téléphone",
+        "subject": "Sujet",
         "submit":"Envoyer"
       }
     },
