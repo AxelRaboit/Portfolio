@@ -46,8 +46,8 @@ export const Project = (props) => {
                     </div>
                     <p className="availability">
                         {isAvailable
-                            ? t("global.available")
-                            : t("global.unavailable")}
+                            ? t("projects.cards.available")
+                            : t("projects.cards.unavailable")}
                     </p>
                 </div>
                 <div className="description">

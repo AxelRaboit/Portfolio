@@ -82,7 +82,7 @@
         "repositoryLink":"Lien du repository",
         "demoLink":"Lien de demo",
         "available": "Disponible",
-        "notAvailable": "Indisponible"
+        "unavailable": "Indisponible"
       }
     }
   }
