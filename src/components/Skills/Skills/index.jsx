@@ -29,6 +29,7 @@ import {
     SiJest
 } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
+import { BiLogoTailwindCss } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiTechnoHeart } from "react-icons/gi";
 import { Card } from "../Card";
@@ -37,6 +38,7 @@ import { useSelector } from "react-redux";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 
 const iconMappings = {
+    BiLogoTailwindCss: BiLogoTailwindCss,
     FaApple: FaApple,
     FaLinux: FaLinux,
     FaNodeJs: FaNodeJs,
