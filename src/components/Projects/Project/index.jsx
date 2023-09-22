@@ -29,7 +29,7 @@ export const Project = (props) => {
         <Container
             className="project"
             theme={theme}
-            data-availability={isAvailable ? 1 : 0}
+            availability={isAvailable ? 1 : 0}
         >
             <ProjectImage
                 src={img ? img : defaultImg}
