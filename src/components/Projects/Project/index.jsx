@@ -29,14 +29,16 @@ export const Project = (props) => {
         <Container
             className="project"
             theme={theme}
-            availability={isAvailable ? 1 : 0}
+            data-availability={isAvailable ? 1 : 0}
         >
             <ProjectImage
                 src={img ? img : defaultImg}
                 alt="project"
                 loading="eager"
-                width={300}
-                height={300}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "100%" }}
             />
             <div className="content">
                 <h1>{currentLocale === english ? nameEN : nameFR}</h1>
@@ -63,21 +65,21 @@ export const Project = (props) => {
                         <div className="links">
                             {repoLink ? (
                                 <a
-                                target="_blank"
-                                className="link repo-link"
-                                href={repoLink}
-                            >
-                                {t("projects.cards.repositoryLink")}
-                            </a>
+                                    target="_blank"
+                                    className="link repo-link"
+                                    href={repoLink}
+                                >
+                                    {t("projects.cards.repositoryLink")}
+                                </a>
                             ) : null}
                             {demoLink ? (
                                 <a
-                                target="_blank"
-                                className="link demo-link"
-                                href={demoLink}
-                            >
-                                {t("projects.cards.demoLink")}
-                            </a>
+                                    target="_blank"
+                                    className="link demo-link"
+                                    href={demoLink}
+                                >
+                                    {t("projects.cards.demoLink")}
+                                </a>
                             ) : null}
                         </div>
                     ) : null}

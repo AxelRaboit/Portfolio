@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
     Container,
     Texts,
@@ -20,7 +20,7 @@ import { DefaultButtonLink } from "@/src/components";
 export const Profile = () => {
     const { t } = useTranslation();
 
-    const [availability, setAvailability] = useState(false);
+    const availability  = process.env.NEXT_PUBLIC_AVAILABLE_FOR_JOB === "true" ? true : false;
 
     const cvPdf = process.env.NEXT_PUBLIC_CV_PDF_LINK;
 
@@ -61,7 +61,11 @@ export const Profile = () => {
                             link="#contact"
                             isTarget={false}
                         />
-                        <DefaultButtonLink text={t("cv.download")} link={cvPdf} isTarget={true} />
+                        <DefaultButtonLink
+                            text={t("cv.download")}
+                            link={cvPdf}
+                            isTarget={true}
+                        />
                     </ContainerButtons>
                     <Social>
                         <p>{t("profile.checkOut")}</p>
@@ -105,8 +109,9 @@ export const Profile = () => {
             <Slide direction="right" triggerOnce>
                 <ProfileAvatar
                     loading="eager"
-                    width={500}
-                    height={500}
+                    width={350}
+                    height={350}
+                    priority={true}
                     src="/assets/profile/profile-avatar.png"
                     alt="profile avatar"
                 />

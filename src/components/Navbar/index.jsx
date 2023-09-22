@@ -1,11 +1,9 @@
 "use client";
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Container, NavLink, Flag } from "./NavbarElements";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import { FaUserAlt } from "react-icons/fa";
 import {
     selectCurrentLocale,
     setLocale,

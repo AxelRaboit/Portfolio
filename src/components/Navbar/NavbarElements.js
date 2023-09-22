@@ -143,5 +143,6 @@ export const NavLink = styled(Link)`
 export const Flag = styled(Image)`
     cursor: pointer;
     margin-left: 1rem;
-    width: 2rem;
+    width: 30px;
+    height: 30px;
 `;
