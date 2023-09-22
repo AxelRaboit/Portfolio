@@ -1,29 +1,9 @@
 {
     "global": {
       "available": "Available",
-      "unavailable": "Unavailable",
-      "login": "Login",
-      "logout": "Logout",
-      "signup": "Sign up"
+      "unavailable": "Unavailable"
     },
     "messages": {
-      "signupForm": {
-        "error": {
-          "fullname": "Please enter a valid fullname.",
-          "email": "Please enter a valid email address.",
-          "password": "Please enter a valid password."
-        },
-        "success": "Your account has been created successfully."
-      },
-      "loginForm": {
-        "error": {
-          "email": "Please enter a valid email address.",
-          "password": "Please enter a valid password.",
-          "notFound": "No account found with this credentials, or an error has occurred.",
-          "fetching": "An error has occurred while sending your message. Please try again later."
-        },
-        "success": "You have been logged in successfully."
-      },
       "form": {
         "error": {
           "globalError": "An error has occurred. Please try again later.",
@@ -63,20 +43,12 @@
       "hello": "Hello",
       "im": "I'm",
       "webDeveloper": "Web Developer",
-      "presentation": "A web developer based in France, I'm passionate about web design and enjoy designing experiences for both the web and mobile devices. I started out using PHP with the Symfony framework and MySQL as my first web development tools, but I've also gained experience in JavaScript, React, NodeJS, ExpressJS and MongoDB.",
+      "presentation": "A web developer based in France, I'm passionate about web design and enjoy designing experiences for both the web and mobile devices. I started out using PHP with the Symfony framework and MySQL as my first web development tools, but I've also gained experience in JavaScript, React, Next Js, TypeScript, NodeJS, ExpressJS and MongoDB.",
       "cta": "Let's talk",
       "checkOut": "Check out my",
       "availability": {
         "yes": "Looking for a job",
         "no": "Employed"
-      },
-      "admin": {
-        "link": {
-          "usersList": "Liste des utilisateurs",
-          "projectList": "Liste des projets",
-          "testimonialList": "Liste des témoignages",
-          "skillsList": "Liste des compétences"
-        }
       }
     },
     "navbar": {
@@ -85,9 +57,7 @@
         "skills": "Skills",
         "projects": "Projects",
         "testimonials": "Testimonials",
-        "contact": "Contact",
-        "profile": "Profile",
-        "login": "Login"
+        "contact": "Contact"
       }
     },
     "skills": {
