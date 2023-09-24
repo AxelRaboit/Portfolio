@@ -104,7 +104,6 @@ export const Texts = styled.div`
     h3 {
         font-weight: 500;
         font-size: 1.2rem;
-        padding-bottom: 1.2rem;
         text-transform: capitalize;
     }
 

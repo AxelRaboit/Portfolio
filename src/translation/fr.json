@@ -72,7 +72,8 @@
     "cv": {
       "title": "Mon",
       "titleComplement": "CV",
-      "download": "Télécharger mon CV"
+      "downloadFromLinkedin": "Télécharger mon CV sur Linkedin",
+      "downloadFromWebsite": "Télécharger mon CV"
     },
     "projects": {
       "title": "Projets",

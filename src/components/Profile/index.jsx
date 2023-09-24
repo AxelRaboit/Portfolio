@@ -20,7 +20,8 @@ import { DefaultButtonLink } from "@/src/components";
 export const Profile = () => {
     const { t } = useTranslation();
 
-    const availability  = process.env.NEXT_PUBLIC_AVAILABLE_FOR_JOB === "true" ? true : false;
+    const availability =
+        process.env.NEXT_PUBLIC_AVAILABLE_FOR_JOB === "true" ? true : false;
 
     const cvPdf = process.env.NEXT_PUBLIC_CV_PDF_LINK;
 
@@ -54,17 +55,25 @@ export const Profile = () => {
                             JavaScript / React JS
                         </span>
                     </h3>
+                    <ContainerButtons>
+                        <DefaultButtonLink
+                            text={t("cv.downloadFromLinkedin")}
+                            link={cvPdf}
+                            isTarget={true}
+                        />
+                        <DefaultButtonLink
+                            text={t("cv.downloadFromWebsite")}
+                            link="/assets/cv/cv_axel_raboit.pdf"
+                            isTarget={true}
+                            isDownloadable={true}
+                        />
+                    </ContainerButtons>
                     <p>{t("profile.presentation")}</p>
                     <ContainerButtons>
                         <DefaultButtonLink
                             text={t("profile.cta")}
                             link="#contact"
                             isTarget={false}
-                        />
-                        <DefaultButtonLink
-                            text={t("cv.download")}
-                            link={cvPdf}
-                            isTarget={true}
                         />
                     </ContainerButtons>
                     <Social>

@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Providers } from "./GlobalRedux/provider";
 
-
 export const metadata = {
     title: {
         default: "Accueil | Axel Portfolio",
