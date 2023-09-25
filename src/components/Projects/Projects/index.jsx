@@ -6,7 +6,7 @@ import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
-import axios from 'axios';
+import axios from "axios";
 
 const getProjects = async () => {
     try {
@@ -20,12 +20,14 @@ const getProjects = async () => {
 
         const response = await axios.get(`${apiUrl}/api/projects`, {
             headers: {
-                'Cache-Control': 'no-store',
+                "Cache-Control": "no-store",
             },
         });
 
         if (response.status !== 200) {
-            throw new Error("Something went wrong while fetching projects data");
+            throw new Error(
+                "Something went wrong while fetching projects data"
+            );
         }
 
         return response.data;
@@ -62,6 +64,7 @@ export const Projects = () => {
                             {t("projects.titleComplement")}
                         </span>
                     </h1>
+                    <p className="project-number">{t("projects.number", { number: 6 })}</p>
                     <p>{t("projects.description")}</p>
                 </Zoom>
                 <SliderComp data={projects} />

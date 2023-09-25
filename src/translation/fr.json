@@ -79,6 +79,7 @@
       "title": "Projets",
       "titleComplement": "Récents",
       "description": "Quelques uns de mes projets récents sur lesquels j'ai travaillé.",
+      "number": "Il y a {{number}} projets",
       "cards": {
         "repositoryLink":"Lien du repository",
         "demoLink":"Lien de demo",

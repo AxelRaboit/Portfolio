@@ -27,4 +27,9 @@ export const Container = styled.div`
             width: 90%;
         }
     }
+
+    .project-number {
+        margin-top: 1rem;
+        background-color: var(--color-primary);
+    }
 `;
