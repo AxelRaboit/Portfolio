@@ -43,12 +43,16 @@
       "hello": "Hello",
       "im": "I'm",
       "webDeveloper": "Web Developer",
-      "presentation": "A web developer based in France, I'm passionate about web design and enjoy designing experiences for both the web and mobile devices. I started out using PHP with the Symfony framework and MySQL as my first web development tools, but I've also gained experience in JavaScript, React, Next Js, TypeScript, NodeJS, ExpressJS and MongoDB.",
+      "presentation": "Welcome to my portfolio, where I share my projects, skills, and experiences. It was built using React JS, Next JS, MongoDB, and Styled Components, i18n.",
       "cta": "Let's talk",
       "checkOut": "Check out my",
       "availability": {
         "yes": "Looking for a job",
         "no": "Employed"
+      },
+      "aboutMe": {
+        "title": "About me",
+        "description": "Previously, I was a heavy-duty truck driver in the USA and Canada. In 2020, I decided to resume my studies in France to become a web developer. I obtained my RNCP diploma, equivalent to a BAC +2, in web development in 2021, and then a second diploma, equivalent to a BAC +4, in web and mobile web developer design through a 2-year apprenticeship. I am passionate about web development and enjoy learning new technologies. The main technologies I work with include PHP, SQL, Symfony, JavaScript, jQuery, TypeScript, React JS, Next JS, MongoDB and more... I am also a big music fan and play acoustic and electric guitar, as well as the piano. I greatly enjoy working in a team, and for me, development goes beyond just coding; it also involves the user experience. That's why I always strive to step back and put myself in the shoes of a user."
       }
     },
     "navbar": {

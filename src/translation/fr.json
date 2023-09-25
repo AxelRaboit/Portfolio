@@ -43,12 +43,16 @@
       "hello": "Bonjour",
       "im": "Je suis",
       "webDeveloper": "Développeur Web",
-      "presentation": "Développeur web basé en France, je suis passionné par le web design et je prends plaisir à concevoir des expériences aussi bien pour le web que pour les appareils mobiles. J'ai débuté mon parcours en utilisant PHP avec le framework Symfony et MySQL en tant que mes premiers outils de développement web, mais j'ai également acquis de l'expérience en JavaScript, React, Next Js, TypeScript, NodeJS, ExpressJS et MongoDB.",
+      "presentation": "Bienvenue sur mon portfolio, où je partage mes projets, mes compétences et mes expériences. Il a été conçu avec React JS, Next JS, MongoDB, Styled Component, i18n.",
       "cta": "Parlons",
       "checkOut": "Découvrez mon",
       "availability": {
         "yes": "En recherche de poste",
         "no": "En poste"
+      },
+      "aboutMe": {
+        "title": "À propos de moi",
+        "description": "Auparavant conducteur poids lourd aux États-Unis et au Canada, j'ai décidé de reprendre mes études en France en 2020 pour devenir développeur web. J'ai obtenu mon diplôme RNCP équivalent BAC +2 de développeur web en 2021, puis un second diplôme équivalent BAC +4 de concepteur développeur web et web mobile dans le cadre d'une alternance de 2 ans. Je suis passionné par le développement web et j'aime apprendre de nouvelles technologies. Les principales technologies avec lesquelles je travaille sont PHP, SQL, Symfony, JavaScript, jQuery, TypeScript, React JS, Next JS, MongoDB et plus encore... Je suis également un grand fan de musique. Je joue de la guitare acoustique, électrique, mais aussi du piano. J'aime beaucoup travailler en équipe, et pour moi, développer ne s'arrête pas au code, mais cela passe aussi par l'expérience utilisateur. C'est pourquoi je m'efforce toujours de prendre du recul et de me mettre dans la peau d'un utilisateur."
       }
     },
     "navbar": {

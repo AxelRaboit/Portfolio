@@ -16,7 +16,7 @@ export const Container = styled.div`
     }
 
     h1 {
-        padding-top: 1rem;
+        margin-top: 1rem;
         text-transform: capitalize;
     }
 

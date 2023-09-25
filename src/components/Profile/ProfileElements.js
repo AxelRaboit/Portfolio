@@ -15,6 +15,26 @@ export const Container = styled.div`
     }
 `;
 
+export const AboutMe = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    .container-previous-job-image {
+        display: flex;
+        width: 500px;
+
+        @media (max-width: 940px) {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    h1 {
+        margin: 1rem 0;
+        text-transform: capitalize;
+    }
+`;
+
 export const ContainerButtons = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +42,7 @@ export const ContainerButtons = styled.div`
     button:first-child {
         margin: 1rem 1rem 1rem 0;
     }
-    
+
     button:last-child {
         margin: 1rem 0 1rem 0;
     }
@@ -188,5 +208,17 @@ export const ProfileAvatar = styled(Image)`
 
     &:hover {
         transform: translateY(-10px);
+    }
+`;
+
+export const PreviousJobImage = styled(Image)`
+    margin: 1rem 1rem 0 0;
+
+    width: 100%;
+    height: 200px;
+
+    @media (max-width: 940px) {
+        width: 100%;
+        height: 100%;
     }
 `;

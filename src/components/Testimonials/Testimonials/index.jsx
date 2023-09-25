@@ -109,7 +109,7 @@ export const TestimonialsComp = () => {
     return (
         <Container id="testimonials" theme={theme}>
             <Slide direction="left" triggerOnce>
-                <span className="green">{t("testimonials.title")}</span>
+                <span>{t("testimonials.title")}</span>
                 <h1>{t("testimonials.titleComplement")}</h1>
             </Slide>
             {loading ? (
