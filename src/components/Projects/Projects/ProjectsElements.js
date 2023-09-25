@@ -29,6 +29,7 @@ export const Container = styled.div`
     }
 
     .project-number {
+        color: var(--color-light);
         margin-top: 1rem;
         background-color: var(--color-primary);
     }
