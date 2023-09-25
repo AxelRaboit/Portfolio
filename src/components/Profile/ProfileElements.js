@@ -11,7 +11,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 940px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 `;
 
