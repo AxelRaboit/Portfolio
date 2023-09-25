@@ -12,6 +12,7 @@ import { Projects } from "./Projects/Projects";
 import { TestimonialsComp } from "./Testimonials/Testimonials";
 import { TestimomnialsSlider } from "./Testimonials/Slider";
 import { Footer } from "./Footer";
+import { Loading } from "./Loading";
 
 export {
     Header,
@@ -28,5 +29,6 @@ export {
     Projects,
     TestimonialsComp,
     TestimomnialsSlider,
-    Footer
+    Footer,
+    Loading
 };

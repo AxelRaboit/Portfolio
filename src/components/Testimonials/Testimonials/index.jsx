@@ -7,7 +7,8 @@ import { Slide } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
-import axios from 'axios';
+import axios from "axios";
+import { Loading } from "@/src/components";
 
 const getTestimonials = async () => {
     try {
@@ -21,12 +22,14 @@ const getTestimonials = async () => {
 
         const response = await axios.get(`${apiUrl}/api/testimonials`, {
             headers: {
-                'Cache-Control': 'no-store',
+                "Cache-Control": "no-store",
             },
         });
 
         if (response.status !== 200) {
-            throw new Error("Something went wrong while fetching testimonials data");
+            throw new Error(
+                "Something went wrong while fetching testimonials data"
+            );
         }
 
         return response.data;
@@ -77,18 +80,26 @@ export const TestimonialsComp = () => {
     const theme = useSelector(selectTheme);
     const [testimonials, setTestimonials] = useState([]);
     let testimonialsContent = "";
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchTestimonials = async () => {
             try {
                 const { testimonials } = await getTestimonials();
                 setTestimonials(testimonials);
+                setLoading(false);
             } catch (error) {
                 console.error(error);
+                setLoading(false);
             }
         };
 
+        /* setTimeout(() => {
+            fetchTestimonials();
+        }, 1000); */
+
         fetchTestimonials();
+
     }, []);
 
     testimonialsContent = testimonials.map((item, i) => (
@@ -99,23 +110,31 @@ export const TestimonialsComp = () => {
         <Container id="testimonials" theme={theme}>
             <Slide direction="left" triggerOnce>
                 <span className="green">{t("testimonials.title")}</span>
-                <h1>{t('testimonials.titleComplement')}</h1>
+                <h1>{t("testimonials.titleComplement")}</h1>
             </Slide>
-            <Slide direction="right" triggerOnce>
-                <Testimonials>
-                    <Slider ref={arrowRef} {...settings}>
-                        {testimonialsContent}
-                    </Slider>
-                    <Buttons>
-                        <button onClick={() => arrowRef.current.slickPrev()}>
-                            <IoIosArrowBack />
-                        </button>
-                        <button onClick={() => arrowRef.current.slickNext()}>
-                            <IoIosArrowForward />
-                        </button>
-                    </Buttons>
-                </Testimonials>
-            </Slide>
+            {loading ? (
+                <Loading />
+            ) : (
+                <Slide direction="right" triggerOnce>
+                    <Testimonials>
+                        <Slider ref={arrowRef} {...settings}>
+                            {testimonialsContent}
+                        </Slider>
+                        <Buttons>
+                            <button
+                                onClick={() => arrowRef.current.slickPrev()}
+                            >
+                                <IoIosArrowBack />
+                            </button>
+                            <button
+                                onClick={() => arrowRef.current.slickNext()}
+                            >
+                                <IoIosArrowForward />
+                            </button>
+                        </Buttons>
+                    </Testimonials>
+                </Slide>
+            )}
         </Container>
     );
 };

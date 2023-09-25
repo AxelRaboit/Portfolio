@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Cards } from "./SkillsElements";
 import { useTranslation } from "react-i18next";
-import axios from 'axios';
+import axios from "axios";
 import {
     FaApple,
     FaLinux,
@@ -14,7 +14,7 @@ import {
     FaSymfony,
     FaGitlab,
     FaSass,
-    FaBootstrap
+    FaBootstrap,
 } from "react-icons/fa";
 import {
     SiMysql,
@@ -26,7 +26,7 @@ import {
     SiJquery,
     SiMongodb,
     SiFirebase,
-    SiJest
+    SiJest,
 } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { BiLogoTailwindCss } from "react-icons/bi";
@@ -36,6 +36,7 @@ import { Card } from "../Card";
 import { Slide } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
+import { Loading } from "@/src/components";
 
 const iconMappings = {
     BiLogoTailwindCss: BiLogoTailwindCss,
@@ -63,7 +64,7 @@ const iconMappings = {
     SiJest: SiJest,
     BsGit: BsGit,
     TbBrandNextjs: TbBrandNextjs,
-    GiTechnoHeart: GiTechnoHeart
+    GiTechnoHeart: GiTechnoHeart,
 };
 
 const getSkills = async () => {
@@ -78,7 +79,7 @@ const getSkills = async () => {
 
         const response = await axios.get(`${apiUrl}/api/skills`, {
             headers: {
-                'Cache-Control': 'no-store',
+                "Cache-Control": "no-store",
             },
         });
 
@@ -97,18 +98,26 @@ export const Skills = () => {
     const [skills, setSkills] = useState([]);
     const currentLocale = useSelector(selectCurrentLocale);
     const english = "en";
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchSkills = async () => {
             try {
                 const { skills } = await getSkills();
                 setSkills(skills);
+                setLoading(false);
             } catch (error) {
                 console.error(error);
+                setLoading(false);
             }
         };
 
+        /* setTimeout(() => {
+            fetchSkills();
+        }, 1000); */
+
         fetchSkills();
+
     }, []);
 
     const getIconComponent = (iconName) => {
@@ -121,22 +130,39 @@ export const Skills = () => {
         <Container className="container" id="skills">
             <Slide direction="left" triggerOnce>
                 <h4>
-                    {t("skills.my")} <span className="skills-title-sup">{t("skills.skills")}</span>
+                    {t("skills.my")}{" "}
+                    <span className="skills-title-sup">
+                        {t("skills.skills")}
+                    </span>
                 </h4>
-                <h1 className="skills-title">{t("skills.whatImWorkingWith")}</h1>
+                <h1 className="skills-title">
+                    {t("skills.whatImWorkingWith")}
+                </h1>
             </Slide>
-            <Cards>
-                {skills.map((skill, index) => (
-                    <Slide direction="up" key={index} triggerOnce>
-                        <Card
-                            Icon={getIconComponent(skill.icon)}
-                            title={currentLocale == english ? skill.nameEN : skill.nameFR}
-                            description={currentLocale == english ? skill.descriptionEN : skill.descriptionFR}
-                            link={skill.link}
-                        />
-                    </Slide>
-                ))}
-            </Cards>
+            {loading ? (
+                <Loading />
+            ) : (
+                <Cards>
+                    {skills.map((skill, index) => (
+                        <Slide direction="up" key={index} triggerOnce>
+                            <Card
+                                Icon={getIconComponent(skill.icon)}
+                                title={
+                                    currentLocale == english
+                                        ? skill.nameEN
+                                        : skill.nameFR
+                                }
+                                description={
+                                    currentLocale == english
+                                        ? skill.descriptionEN
+                                        : skill.descriptionFR
+                                }
+                                link={skill.link}
+                            />
+                        </Slide>
+                    ))}
+                </Cards>
+            )}
         </Container>
     );
 };

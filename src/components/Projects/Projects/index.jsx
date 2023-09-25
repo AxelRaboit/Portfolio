@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import axios from "axios";
+import { Loading } from "@/src/components";
 
 const getProjects = async () => {
     try {
@@ -40,18 +41,26 @@ export const Projects = () => {
     const { t } = useTranslation();
     const theme = useSelector(selectTheme);
     const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchProjects = async () => {
             try {
                 const { projects } = await getProjects();
                 setProjects(projects);
+                setLoading(false);
             } catch (error) {
                 console.error(error);
+                setLoading(false);
             }
         };
 
+        /* setTimeout(() => {
+            fetchProjects();
+        }, 1000); */
+
         fetchProjects();
+
     }, []);
 
     return (
@@ -67,7 +76,11 @@ export const Projects = () => {
                     <p className="project-number">{t("projects.number", { number: 6 })}</p>
                     <p>{t("projects.description")}</p>
                 </Zoom>
-                <SliderComp data={projects} />
+                {loading ? (
+                    <Loading />
+                ) : (
+                    <SliderComp data={projects} />
+                )}
             </Container>
         </Background>
     );
