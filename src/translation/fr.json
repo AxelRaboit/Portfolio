@@ -44,7 +44,10 @@
       "im": "Je suis",
       "webDeveloper": "Développeur Web",
       "presentation": "Bienvenue sur mon portfolio, où je partage mes projets, mes compétences et mes expériences. Il a été conçu avec React JS, Next JS, MongoDB, Styled Component, i18n.",
-      "cta": "Parlons",
+      "ctaLetsTalk": "Parlons",
+      "lightBoxCta": "Quelques images",
+      "downloadFromLinkedinCta": "Télécharger mon CV sur Linkedin",
+      "downloadFromWebsiteCta": "Télécharger mon CV",
       "checkOut": "Découvrez mon",
       "availability": {
         "yes": "En recherche de poste",
@@ -72,12 +75,6 @@
     "testimonials": {
       "title": "Témoignages",
       "titleComplement": "Ce qu'ils disent de moi"
-    },
-    "cv": {
-      "title": "Mon",
-      "titleComplement": "CV",
-      "downloadFromLinkedin": "Télécharger mon CV sur Linkedin",
-      "downloadFromWebsite": "Télécharger mon CV"
     },
     "projects": {
       "title": "Projets",

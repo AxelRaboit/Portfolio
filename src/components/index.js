@@ -30,5 +30,5 @@ export {
     TestimonialsComp,
     TestimomnialsSlider,
     Footer,
-    Loading
+    Loading,
 };

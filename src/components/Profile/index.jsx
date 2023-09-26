@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import FsLightbox from "fslightbox-react";
 import {
     Container,
     Texts,
     Social,
     ProfileAvatar,
-    PreviousJobImage,
     ContainerButtons,
     AboutMe,
 } from "./ProfileElements";
@@ -17,10 +17,11 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { DefaultButtonLink } from "@/src/components";
+import { DefaultButtonLink, DefaultButton } from "@/src/components";
 
 export const Profile = () => {
     const { t } = useTranslation();
+    const [toggler, setToggler] = useState(false);
 
     const availability =
         process.env.NEXT_PUBLIC_AVAILABLE_FOR_JOB === "true" ? true : false;
@@ -29,6 +30,13 @@ export const Profile = () => {
 
     return (
         <>
+            <FsLightbox
+                toggler={toggler}
+                sources={[
+                    "/assets/profile/previous_job.jpg",
+                    "/assets/profile/previous_job_66.jpg",
+                ]}
+            />
             <Container className="container">
                 <Slide direction="left" triggerOnce>
                     <Texts availability={availability ? 1 : 0}>
@@ -62,12 +70,12 @@ export const Profile = () => {
                         </h3>
                         <ContainerButtons>
                             <DefaultButtonLink
-                                text={t("cv.downloadFromLinkedin")}
+                                text={t("profile.downloadFromLinkedinCta")}
                                 link={cvPdf}
                                 isTarget={true}
                             />
                             <DefaultButtonLink
-                                text={t("cv.downloadFromWebsite")}
+                                text={t("profile.downloadFromWebsiteCta")}
                                 link="/assets/cv/cv_axel_raboit.pdf"
                                 isTarget={true}
                                 isDownloadable={true}
@@ -76,7 +84,7 @@ export const Profile = () => {
                         <p>{t("profile.presentation")}</p>
                         <ContainerButtons>
                             <DefaultButtonLink
-                                text={t("profile.cta")}
+                                text={t("profile.ctaLetsTalk")}
                                 link="#contact"
                                 isTarget={false}
                             />
@@ -136,20 +144,13 @@ export const Profile = () => {
                     <AboutMe>
                         <h1>{t("profile.aboutMe.title")}</h1>
                         <p>{t("profile.aboutMe.description")}</p>
-                        <div className="container-previous-job-image">
-                            <PreviousJobImage
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                alt="previous job with truck"
-                                src="/assets/profile/previous_job.jpg"
-                            />
-                            <PreviousJobImage
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                alt="previous job with truck on the road 66"
-                                src="/assets/profile/previous_job_66.jpg"
+
+                        <div className="container-lightbox">
+                            <DefaultButton
+                                onClick={() => setToggler(!toggler)}
+                                text={t("profile.lightBoxCta")}
+                                link="#"
+                                isTarget={false}
                             />
                         </div>
                     </AboutMe>

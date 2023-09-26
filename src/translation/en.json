@@ -44,7 +44,10 @@
       "im": "I'm",
       "webDeveloper": "Web Developer",
       "presentation": "Welcome to my portfolio, where I share my projects, skills, and experiences. It was built using React JS, Next JS, MongoDB, and Styled Components, i18n.",
-      "cta": "Let's talk",
+      "ctaLetsTalk": "Let's talk",
+      "lightBoxCta": "Some images",
+      "downloadFromLinkedinCta": "Download my CV on Linkedin",
+      "downloadFromWebsiteCta": "Download my CV",
       "checkOut": "Check out my",
       "availability": {
         "yes": "Looking for a job",
@@ -72,12 +75,6 @@
     "testimonials": {
       "title": "Testomonials",
       "titleComplement": "What people say about me"
-    },
-    "cv": {
-      "title": "My",
-      "titleComplement": "CV",
-      "downloadFromLinkedin": "Download my CV on Linkedin",
-      "downloadFromWebsite": "Download my CV"
     },
     "projects": {
       "title": "Recent",
