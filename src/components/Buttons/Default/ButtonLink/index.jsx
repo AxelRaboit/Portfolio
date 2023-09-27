@@ -10,14 +10,26 @@ export const DefaultButtonLink = ({
 }) => {
     return (
         <Container className="default-button-link">
-            <a
-                href={link}
-                target={isTarget && !isDownloadable ? "_blank" : ""}
-                rel={rel}
-                download={isDownloadable ? isDownloadable : ""}
-            >
-                {text}
-            </a>
+            {
+                isDownloadable ? (
+                    <a
+                        href={link}
+                        target={isTarget ? "_blank" : ""}
+                        download
+                        rel={rel}
+                    >
+                        {text}
+                    </a>
+                ) : (
+                    <a
+                        href={link}
+                        target={isTarget ? "_blank" : ""}
+                        rel={rel}
+                    >
+                        {text}
+                    </a>
+                )
+            }
         </Container>
     );
 };
