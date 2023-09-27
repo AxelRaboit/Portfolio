@@ -35,7 +35,7 @@ export const Banner = styled.div`
         props.theme === "dark"
             ? "var(--color-dark-grey)"
             : "var(--color-light)"};
-    /* height: calc(100vh - 58px); */
+    height: calc(100vh - 58px);
     
     @media (max-width: 940px) {
         height: 100%;
