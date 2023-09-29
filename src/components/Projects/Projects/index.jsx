@@ -73,7 +73,7 @@ export const Projects = () => {
                             {t("projects.titleComplement")}
                         </span>
                     </h1>
-                    <p className="project-number">{t("projects.number", { number: 6 })}</p>
+                    <p className="project-number">{t("projects.number", { number: projects.length })}</p>
                     <p>{t("projects.description")}</p>
                 </Zoom>
                 {loading ? (
