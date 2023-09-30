@@ -9,7 +9,7 @@ export const TestimomnialsSlider = (props) => {
     const { name, position, img, stars, description } = props.item;
     const theme = useSelector(selectTheme);
 
-    const defaultImage = "/assets/testimonial/default-user-image.png"
+    const defaultImage = "/assets/testimonial/default-user-image.png";
 
     return (
         <Container theme={theme}>
@@ -18,13 +18,22 @@ export const TestimomnialsSlider = (props) => {
                     <IoIosQuote />
                 </span>
                 <div>
-                    {Array(stars)
-                        .fill()
-                        .map((_, i) => (
-                            <span className="star" key={i}>
+                    {Array.from(Array(5), (e, i) => {
+                        const star =
+                            i < stars ? (
                                 <AiOutlineStar />
+                            ) : (
+                                <AiOutlineStar
+                                    color="grey"
+                                />
+                            );
+
+                        return (
+                            <span className="star" key={i}>
+                                {star}
                             </span>
-                        ))}
+                        );
+                    })}
                 </div>
             </Header>
             <Body>{description}</Body>
