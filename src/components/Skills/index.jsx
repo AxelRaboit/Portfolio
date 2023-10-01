@@ -20,7 +20,7 @@ const Card = (props) => {
                 <Icon />
             </span>
             <h1>{title}</h1>
-            <CropText text={description} limit={110} />
+            <CropText text={description} limit={200} />
             <a target="_blank" href={link}>
                 <button>
                     {t("general.button.knowMore")}
