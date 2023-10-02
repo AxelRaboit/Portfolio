@@ -59,7 +59,7 @@ export const Project = (props) => {
                                 ? descriptionEN
                                 : descriptionFR
                         }
-                        limit={100}
+                        limit={200}
                     />
                     {repoLink || demoLink ? (
                         <div className="links">
