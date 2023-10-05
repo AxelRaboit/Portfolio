@@ -132,11 +132,15 @@ export const Form = styled.div`
         .message,
         .subject,
         .phone {
+            svg {
+                color: var(--color-white);
+            }
+
             display: flex;
             background: ${(props) =>
-            props.theme === "dark"
-                ? "var(--color-gradient-lighter-grey)"
-                : "var(--color-darker-white)"};
+                props.theme === "dark"
+                    ? "var(--color-gradient-lighter-grey)"
+                    : "var(--color-darker-white)"};
             border-radius: 0.5rem;
             margin-bottom: 0.5rem;
 
