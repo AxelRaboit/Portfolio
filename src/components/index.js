@@ -2,7 +2,6 @@
 import { Header } from "./Header";
 import { Navbar } from "./Navbar";
 import { GlobalWrapper } from "./GlobalWrapper";
-import { GlobalWrapperNoFooter } from "./GlobalWrapper/noFooter";
 import { DefaultButtonLink, DefaultButton, VariantButtonLink } from "./Buttons";
 import { Home } from "./Home";
 import { ArrowUp } from "./ArrowUp";
@@ -18,7 +17,6 @@ export {
     Header,
     Navbar,
     GlobalWrapper,
-    GlobalWrapperNoFooter,
     DefaultButtonLink,
     DefaultButton,
     VariantButtonLink,

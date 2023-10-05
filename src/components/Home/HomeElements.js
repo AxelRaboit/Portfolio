@@ -32,7 +32,7 @@ export const ContainerArrow = styled.div`
 export const Banner = styled.div`
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-gradient-dark-grey)"
+            ? "var(--color-gradient-deep-dark-grey)"
             : "var(--color-white)"};
     height: calc(100vh - 58px);
     

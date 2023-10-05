@@ -54,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Background = styled.div`
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-gradient-dark-grey)"
+            ? "var(--color-gradient-deep-dark-grey)"
             : "var(--color-white)"};
 `;
 

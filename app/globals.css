@@ -28,6 +28,11 @@ code {
       rgb(45, 45, 58) 0%,
       rgb(43, 43, 53) 100%
   );
+  --color-gradient-deep-dark-grey: linear-gradient(
+      159deg,
+      rgb(22, 22, 28) 0%,
+      rgb(59, 59, 76) 100%
+  );
   --color-white: #f7f7f8;
   --color-darker-white: #e2e2e2;
   --color-black: #191923;
