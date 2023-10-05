@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 0.7rem 2rem;
     cursor: pointer;
     background-color: var(--color-primary);
     border: none;
     font-family: var(--font-roboto-mono);
-    filter: var(--drop-shadow-green);
+    transition: all 0.2s ease-in-out;
     position: relative;
     color: var(--color-white);
     text-decoration: none;
@@ -17,16 +17,15 @@ export const Button = styled.button`
     }
 
     &:hover {
-        filter: var(--drop-shadow-green-darker);
+        background-color: var(--color-primary-hover);
     }
 
     &:disabled {
         background-color: var(--color-not-allowed);
-        filter: var(--drop-shadow-green);
         cursor: not-allowed;
 
         &:hover {
-        filter: var(--drop-shadow-green-darker);
-    }
+            background-color: var(--color-not-allowed-hover);
+        }
     }
 `;

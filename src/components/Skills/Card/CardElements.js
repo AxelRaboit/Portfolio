@@ -20,6 +20,7 @@ export const Container = styled.div`
 
     button {
         position: absolute;
+        border-radius: 0.5rem;
         left: 50%;
         transform: translateX(-50%);
         bottom: 20px;

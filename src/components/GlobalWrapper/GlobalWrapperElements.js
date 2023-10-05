@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
     .center .project {
         border: solid var(--color-primary) 2px;
-        filter: var(--drop-shadow-green);
+        background-color: var(--color-primary);
         opacity: 0.5;
         transform: scale(1);
         pointer-events: none;
@@ -71,12 +71,12 @@ export const ContainerArrow = styled.div`
     .arrow-down-icon {
         color: var(--color-primary);
         font-size: 3rem;
-        filter: var(--drop-shadow-green);
+        background-color: var(--color-primary);
         animation: bounceUpDown 2s infinite;
         cursor: pointer;
 
         &:hover {
-            filter: drop-shadow(0px 10px 10px #01be9570);
+            background-color: var(--color-primary-hover);
             animation: none;
         }
     }

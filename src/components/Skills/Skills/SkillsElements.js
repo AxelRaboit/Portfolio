@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
     @media (max-width: 840px) {
         width: 90%;
     }

@@ -29,11 +29,11 @@ export const Container = styled.div`
         color: var(--color-primary);
         padding: 0.5rem;
 
-        filter: var(--drop-shadow-green);
+        background-color: var(--color-primary);
         cursor: pointer;
 
         &:hover {
-            filter: var(--drop-shadow-green-darker);
+            background-color: var(--color-primary-hover);
             animation: none;
         }
 

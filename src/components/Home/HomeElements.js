@@ -9,12 +9,11 @@ export const ContainerArrow = styled.div`
     .arrow-down-icon {
         color: var(--color-primary);
         font-size: 3rem;
-        filter: var(--drop-shadow-green);
         animation: bounceUpDown 2s infinite;
         cursor: pointer;
 
         &:hover {
-            filter: var(--drop-shadow-green-darker);
+            color: var(--color-primary-hover);
             animation: none;
         }
     }

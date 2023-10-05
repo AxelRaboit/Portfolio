@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
+    border-radius: 0.5rem;
     padding: 0;
     cursor: pointer;
     background-color: transparent;
     border: none;
-    filter: var(--drop-shadow-green);
+    background-color: var(--color-primary);
     position: relative;
-
+    
     &:focus {
         outline: none;
     }
-
+    
     a {
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         width: 100%;
         height: 100%;
         display: flex;
@@ -21,14 +22,14 @@ export const Container = styled.button`
         justify-content: center;
         color: var(--color-white);
         text-decoration: none;
+        transition: all 0.2s ease-in-out;
         padding: 0.7rem 2rem;
         background-color: var(--color-primary);
         border: none;
         font-family: var(--font-roboto-mono);
         position: relative;
-    }
-
-    &:hover {
-        filter: var(--drop-shadow-green-darker);
+        &:hover {
+            background-color: var(--color-primary-hover);
+        }
     }
 `;

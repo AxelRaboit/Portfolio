@@ -11,7 +11,7 @@ export const Buttons = styled.div`
         height: 2rem;
         background-color: var(--color-primary);
         color: var(--color-white);
-        filter: var(--drop-shadow-green);
+        background-color: var(--color-primary);
         cursor: pointer;
         border: none;
         position: absolute;
@@ -19,7 +19,7 @@ export const Buttons = styled.div`
         right: -1rem;
 
         &:hover {
-            filter: var(--drop-shadow-green-darker);
+            background-color: var(--color-primary-hover);
         }
     }
 

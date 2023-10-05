@@ -17,7 +17,7 @@ export const Header = styled.div`
 
     .quote {
         font-size: 3rem;
-        color: #01be96;
+        color: var(--color-primary);
         opacity: 0.7;
     }
 
