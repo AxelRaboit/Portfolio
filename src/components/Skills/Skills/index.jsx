@@ -99,7 +99,6 @@ export const Skills = () => {
     const INITIAL_SKILLS_PER_PAGE = 3;
 
     const { t } = useTranslation();
-    const [skills, setSkills] = useState([]);
     const currentLocale = useSelector(selectCurrentLocale);
     const english = "en";
     const [loading, setLoading] = useState(true);
