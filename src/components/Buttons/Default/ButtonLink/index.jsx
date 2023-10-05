@@ -20,7 +20,7 @@ export const DefaultButtonLink = ({
                         target={isTarget ? "_blank" : ""}
                         download
                         rel={rel}
-                        linkExtraClass={linkExtraClass}
+                        linkextraclass={linkExtraClass}
                     >
                         {text}
                     </Link>
@@ -29,7 +29,7 @@ export const DefaultButtonLink = ({
                         href={link}
                         target={isTarget ? "_blank" : ""}
                         rel={rel}
-                        linkExtraClass={linkExtraClass}
+                        linkextraclass={linkExtraClass}
                     >
                         {text}
                     </Link>
