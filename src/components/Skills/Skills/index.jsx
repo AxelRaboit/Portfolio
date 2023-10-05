@@ -96,7 +96,7 @@ const getSkills = async () => {
 };
 
 export const Skills = () => {
-    const INITIAL_SKILLS_PER_PAGE = 4;
+    const INITIAL_SKILLS_PER_LOAD = 4;
 
     const { t } = useTranslation();
     const currentLocale = useSelector(selectCurrentLocale);
@@ -104,7 +104,7 @@ export const Skills = () => {
     const [loading, setLoading] = useState(true);
     const [displayedSkills, setDisplayedSkills] = useState([]);
     const [totalSkills, setTotalSkills] = useState([]);
-    const [skillsPerPage, setSkillsPerPage] = useState(INITIAL_SKILLS_PER_PAGE);
+    const [skillsPerPage, setSkillsPerPage] = useState(INITIAL_SKILLS_PER_LOAD);
 
     useEffect(() => {
         const fetchSkills = async () => {
@@ -188,7 +188,7 @@ export const Skills = () => {
                 </Cards>
             )}
             <div className="container-skills-buttons">
-                {displayedSkills.length > INITIAL_SKILLS_PER_PAGE && (
+                {displayedSkills.length > INITIAL_SKILLS_PER_LOAD && (
                     <DefaultButton onClick={loadLessSkills} text="Load less" />
                 )}
                 {displayedSkills.length < totalSkills.length && (
