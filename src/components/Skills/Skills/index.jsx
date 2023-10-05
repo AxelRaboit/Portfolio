@@ -37,6 +37,8 @@ import { Slide } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 import { Loading } from "@/src/components";
+import { DefaultButton } from "@/src/components";
+import { skillSorting } from "@/src/tools/SkillSorting";
 
 const iconMappings = {
     BiLogoTailwindCss: BiLogoTailwindCss,
@@ -94,17 +96,28 @@ const getSkills = async () => {
 };
 
 export const Skills = () => {
+    const INITIAL_SKILLS_PER_PAGE = 3;
+
     const { t } = useTranslation();
     const [skills, setSkills] = useState([]);
     const currentLocale = useSelector(selectCurrentLocale);
     const english = "en";
     const [loading, setLoading] = useState(true);
+    const [displayedSkills, setDisplayedSkills] = useState([]);
+    const [totalSkills, setTotalSkills] = useState([]);
+    const [skillsPerPage, setSkillsPerPage] = useState(INITIAL_SKILLS_PER_PAGE);
 
     useEffect(() => {
         const fetchSkills = async () => {
             try {
                 const { skills } = await getSkills();
-                setSkills(skills);
+
+                const mainSkills = ["symfony", "next", "react", "javascript", "mongodb", "sql", "redux", "tailwind"];
+                skills.sort(skillSorting(mainSkills));
+
+                const initialSkills = skills.slice(0, skillsPerPage);
+                setTotalSkills(skills);
+                setDisplayedSkills(initialSkills);
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -112,17 +125,29 @@ export const Skills = () => {
             }
         };
 
-        /* setTimeout(() => {
-            fetchSkills();
-        }, 1000); */
-
         fetchSkills();
-
     }, []);
+
+    const loadMoreSkills = () => {
+        const currentDisplayCount = displayedSkills.length;
+        const skillsToLoad = totalSkills.slice(
+            currentDisplayCount,
+            currentDisplayCount + skillsPerPage
+        );
+        setDisplayedSkills([...displayedSkills, ...skillsToLoad]);
+    };
+
+    const loadLessSkills = () => {
+        const currentDisplayCount = displayedSkills.length;
+        const newDisplayedSkills = displayedSkills.slice(
+            0,
+            currentDisplayCount - skillsPerPage
+        );
+        setDisplayedSkills(newDisplayedSkills);
+    };
 
     const getIconComponent = (iconName) => {
         const IconComponent = iconMappings[iconName];
-
         return IconComponent || GiTechnoHeart;
     };
 
@@ -143,17 +168,17 @@ export const Skills = () => {
                 <Loading />
             ) : (
                 <Cards>
-                    {skills.map((skill, index) => (
-                        <Slide direction="up" key={index} triggerOnce>
+                    {displayedSkills.map((skill, index) => (
+                        <Slide direction="down" key={index} triggerOnce>
                             <Card
                                 Icon={getIconComponent(skill.icon)}
                                 title={
-                                    currentLocale == english
+                                    currentLocale === english
                                         ? skill.nameEN
                                         : skill.nameFR
                                 }
                                 description={
-                                    currentLocale == english
+                                    currentLocale === english
                                         ? skill.descriptionEN
                                         : skill.descriptionFR
                                 }
@@ -163,6 +188,16 @@ export const Skills = () => {
                     ))}
                 </Cards>
             )}
+            <div className="container-skills-buttons">
+                {displayedSkills.length > INITIAL_SKILLS_PER_PAGE && (
+                    <DefaultButton onClick={loadLessSkills} text="Load less" />
+                )}
+                {displayedSkills.length < totalSkills.length && (
+                    <DefaultButton onClick={loadMoreSkills} text="Load more" />
+                )}
+            </div>
         </Container>
     );
 };
+
+export default Skills;

@@ -13,6 +13,17 @@ export const Container = styled.div`
     h1.skills-title {
         padding-top: 1rem;
     }
+
+    .container-skills-buttons {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button:first-child {
+            margin-right: 1rem;
+        }
+    }
 `;
 
 export const Cards = styled.div`
