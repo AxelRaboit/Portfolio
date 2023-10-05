@@ -96,7 +96,7 @@ const getSkills = async () => {
 };
 
 export const Skills = () => {
-    const INITIAL_SKILLS_PER_PAGE = 3;
+    const INITIAL_SKILLS_PER_PAGE = 4;
 
     const { t } = useTranslation();
     const currentLocale = useSelector(selectCurrentLocale);
