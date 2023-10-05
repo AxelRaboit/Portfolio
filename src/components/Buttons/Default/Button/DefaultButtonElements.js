@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+    border-radius: .5rem;
     padding: 0.7rem 2rem;
     cursor: pointer;
     background-color: var(--color-primary);
@@ -8,7 +9,7 @@ export const Button = styled.button`
     font-family: var(--font-roboto-mono);
     filter: var(--drop-shadow-green);
     position: relative;
-    color: var(--color-light);
+    color: var(--color-white);
     text-decoration: none;
 
     &:focus {

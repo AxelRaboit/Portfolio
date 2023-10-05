@@ -94,10 +94,6 @@ export const TestimonialsComp = () => {
             }
         };
 
-        /* setTimeout(() => {
-            fetchTestimonials();
-        }, 1000); */
-
         fetchTestimonials();
 
     }, []);

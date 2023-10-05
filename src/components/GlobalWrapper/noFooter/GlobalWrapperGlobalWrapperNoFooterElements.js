@@ -11,10 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     position: ${(props) => (props.scrollIsLocked === 1 ? "fixed" : "")};
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-dark)"
-            : "var(--color-light-grey)"};
+            ? "var(--color-black)"
+            : "var(--color-darker-white)"};
     color: ${(props) =>
-        props.theme === "dark" ? "var(--color-light)" : "var(--color-dark)"};
+        props.theme === "dark" ? "var(--color-white)" : "var(--color-black)"};
   }
 
     .slick-list, .slick-slider, .slick-track {
@@ -54,12 +54,12 @@ export const GlobalStyle = createGlobalStyle`
 export const Background = styled.div`
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-dark-grey)"
-            : "var(--color-light)"};
+            ? "var(--color-gradient-dark-grey)"
+            : "var(--color-white)"};
 `;
 
 export const LightColor = styled.div`
-    background: var(--color-dark-grey);
+    background: var(--color-gradient-dark-grey);
 `;
 
 export const ContainerArrow = styled.div`

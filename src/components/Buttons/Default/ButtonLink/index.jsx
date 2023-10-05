@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "./DefaultButtonLinkElements";
+import Link from "next/link";
 
 export const DefaultButtonLink = ({
     text,
@@ -7,27 +8,31 @@ export const DefaultButtonLink = ({
     isTarget,
     isDownloadable = false,
     rel = "",
+    containerExtraClass = "",
+    linkExtraClass = "",
 }) => {
     return (
-        <Container className="default-button-link">
+        <Container className={`default-button-link ${containerExtraClass}`}>
             {
                 isDownloadable ? (
-                    <a
+                    <Link
                         href={link}
                         target={isTarget ? "_blank" : ""}
                         download
                         rel={rel}
+                        linkExtraClass={linkExtraClass}
                     >
                         {text}
-                    </a>
+                    </Link>
                 ) : (
-                    <a
+                    <Link
                         href={link}
                         target={isTarget ? "_blank" : ""}
                         rel={rel}
+                        linkExtraClass={linkExtraClass}
                     >
                         {text}
-                    </a>
+                    </Link>
                 )
             }
         </Container>

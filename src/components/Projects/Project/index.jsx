@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container, ProjectImage } from "./ProjectElements";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
+import { DefaultButtonLink } from "@/src/components";
 
 export const Project = (props) => {
     const theme = useSelector(selectTheme);
@@ -64,22 +65,20 @@ export const Project = (props) => {
                     {repoLink || demoLink ? (
                         <div className="links">
                             {repoLink ? (
-                                <a
-                                    target="_blank"
-                                    className="link repo-link"
-                                    href={repoLink}
-                                >
-                                    {t("projects.cards.repositoryLink")}
-                                </a>
+                                <DefaultButtonLink
+                                    text={t("projects.cards.repositoryLink")}
+                                    link={repoLink}
+                                    isTarget={true}
+                                    containerExtraClass = "repo-link"
+                                />
                             ) : null}
                             {demoLink ? (
-                                <a
-                                    target="_blank"
-                                    className="link demo-link"
-                                    href={demoLink}
-                                >
-                                    {t("projects.cards.demoLink")}
-                                </a>
+                                <DefaultButtonLink
+                                    text={t("projects.cards.demoLink")}
+                                    link={demoLink}
+                                    isTarget={true}
+                                    containerExtraClass = "demo-link"
+                                />
                             ) : null}
                         </div>
                     ) : null}

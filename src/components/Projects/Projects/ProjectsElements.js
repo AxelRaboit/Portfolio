@@ -29,7 +29,8 @@ export const Container = styled.div`
     }
 
     .project-number {
-        color: var(--color-light);
+        border-radius: 0.5rem;
+        color: var(--color-white);
         margin-top: 1rem;
         background-color: var(--color-primary);
     }

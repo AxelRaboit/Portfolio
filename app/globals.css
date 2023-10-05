@@ -18,19 +18,19 @@ code {
   --font-inter: 'Inter', sans-serif;
   --font-roboto-mono: 'Roboto Mono', monospace;
   --font-rubik: 'Rubik', sans-serif;
-  --color-lighter-grey: linear-gradient(
+  --color-gradient-lighter-grey: linear-gradient(
       159deg,
       rgb(31, 31, 40) 0%,
       rgb(43, 43, 53) 100%
   );
-  --color-dark-grey: linear-gradient(
+  --color-gradient-dark-grey: linear-gradient(
       159deg,
       rgb(45, 45, 58) 0%,
       rgb(43, 43, 53) 100%
   );
-  --color-light-grey: #e2e2e2;
-  --color-dark: #191923;
-  --color-light: #f7f7f8;
+  --color-white: #f7f7f8;
+  --color-darker-white: #e2e2e2;
+  --color-black: #191923;
   --color-primary: #01be96;
   --color-red: #ff4d4d;
   --color-green: #00ff80;

@@ -10,15 +10,15 @@ export const Container = styled.div`
     height: 20rem;
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-lighter-grey)"
-            : "var(--color-light)"};
+            ? "var(--color-gradient-lighter-grey)"
+            : "var(--color-white)"};
     margin: 0 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    color: var(--color-light);
+    color: var(--color-white);
 
     .availability {
         display: flex;
@@ -75,19 +75,18 @@ export const Container = styled.div`
         transition: all 400ms ease-in-out;
 
         .description {
-            a.demo-link,
-            a.repo-link {
-                color: var(--color-primary);
-                text-decoration: none;
-                font-size: 0.8rem;
-
-                &:hover {
-                    text-decoration: underline;
+            .links {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .demo-link,
+                .repo-link {
+                    width: 100%;
                 }
-            }
-
-            a.repo-link {
-                margin-right: 0.4rem;
+                .repo-link {
+                    margin-bottom: 1rem;
+                }
             }
         }
 

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    border-radius: 0.5rem;
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-dark-grey)"
-            : "var(--color-light)"};
+            ? "var(--color-gradient-lighter-grey)"
+            : "var(--color-white)"};
     padding: 1.5rem 1rem;
     margin: 0 1rem;
 `

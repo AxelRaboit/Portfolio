@@ -11,17 +11,17 @@ export const Container = styled.div`
         font-size: 1.5rem;
         cursor: pointer;
 
-        color: var(--color-light);
+        color: var(--color-white);
         color: ${(props) =>
             props.theme === "dark"
                 ? "var(--color-yellow)"
-                : "var(--color-dark)"};
+                : "var(--color-black)"};
         filter: ${(props) =>
             props.theme === "dark" ? "drop-shadow(0px 2px 7px #FFD700)" : ""};
 
         @media screen and (max-width: 1200px) {
             filter: unset;
-            color: var(--color-light);
+            color: var(--color-white);
         }
     }
 
@@ -38,7 +38,7 @@ export const Container = styled.div`
         }
 
         @media screen and (max-width: 1200px) {
-            color: var(--color-light);
+            color: var(--color-white);
 
             .user-icon {
                 display: none;
@@ -54,9 +54,9 @@ export const Container = styled.div`
         margin-left: 1rem;
         color: ${(props) =>
             props.theme === "dark"
-                ? "var(--color-light)"
-                : "var(--color-dark)"};
-        color: var(--color-light);
+                ? "var(--color-white)"
+                : "var(--color-black)"};
+        color: var(--color-white);
         text-decoration: none;
         font-size: 400;
         position: relative;
@@ -82,7 +82,7 @@ export const Container = styled.div`
         }
 
         @media screen and (max-width: 768px) {
-            color: var(--color-light);
+            color: var(--color-white);
         }
     }
 
@@ -110,7 +110,7 @@ export const Container = styled.div`
 export const NavLink = styled(Link)`
     margin-left: 1rem;
     color: ${(props) =>
-        props.theme === "dark" ? "var(--color-light)" : "var(--color-dark)"};
+        props.theme === "dark" ? "var(--color-white)" : "var(--color-black)"};
     text-decoration: none;
     font-size: 400;
     position: relative;
@@ -136,7 +136,7 @@ export const NavLink = styled(Link)`
     }
 
     @media screen and (max-width: 1200px) {
-        color: var(--color-light);
+        color: var(--color-white);
     }
 `;
 

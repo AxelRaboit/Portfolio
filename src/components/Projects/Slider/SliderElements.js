@@ -6,10 +6,11 @@ export const Container = styled.div`
 
 export const Buttons = styled.div`
     button {
+        border-radius: 0.5rem;
         width: 2rem;
         height: 2rem;
         background-color: var(--color-primary);
-        color: var(--color-light);
+        color: var(--color-white);
         filter: var(--drop-shadow-green);
         cursor: pointer;
         border: none;

@@ -19,6 +19,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { DefaultButton } from "@/src/components";
+import Link from "next/link";
 
 export const Footer = () => {
     const form = useRef();
@@ -158,51 +159,51 @@ export const Footer = () => {
                                 <span>
                                     <FiPhoneCall />
                                 </span>
-                                <a href="tel:+33698357147">+33 6 98 35 71 47</a>
+                                <Link href="tel:+33698357147">+33 6 98 35 71 47</Link>
                             </div>
                             <div>
                                 <span>
                                     <HiOutlineMailOpen />
                                 </span>
-                                <a href="mailto:axel.raboit@gmail.com">
+                                <Link href="mailto:axel.raboit@gmail.com">
                                     axel.raboit@gmail.com
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="profiles">
                             <h1>{t("contact.checkMyMedia")}</h1>
                             <div className="icons">
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://www.linkedin.com/in/axel-raboit/"
                                     >
                                         <FaLinkedinIn />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://github.com/AxelRaboit"
                                     >
                                         <AiOutlineGithub />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://gitlab.com/axel.raboit"
                                     >
                                         <AiFillGitlab />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://www.instagram.com/axelr_7/"
                                     >
                                         <AiOutlineInstagram />
-                                    </a>
+                                    </Link>
                                 </span>
                             </div>
                         </div>

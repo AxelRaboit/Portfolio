@@ -6,6 +6,7 @@ import {
 import { useSelector } from "react-redux";
 import CropText from "../../tools/CropText";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const Card = (props) => {
 
@@ -21,11 +22,11 @@ const Card = (props) => {
             </span>
             <h1>{title}</h1>
             <CropText text={description} limit={110} />
-            <a target="_blank" href={link}>
+            <Link target="_blank" href={link}>
                 <button>
                     {t("general.button.knowMore")}
                 </button>
-            </a>
+            </Link>
         </Container>
     );
 };

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    border-radius: 0.5rem;
     width: 100%;
     height: 300px;
     position: relative;
     background: ${(props) =>
     props.theme === "dark"
-        ? "var(--color-lighter-grey)"
-        : "var(--color-light)"
+        ? "var(--color-gradient-lighter-grey)"
+        : "var(--color-white)"
     };
 
     padding: 1rem;
@@ -22,17 +23,6 @@ export const Container = styled.div`
         left: 50%;
         transform: translateX(-50%);
         bottom: 20px;
-        padding: 0.7rem 2rem;
-        cursor: pointer;
-        background-color: var(--color-primary);
-        border: none;
-        color: #fff;
-        font-weight: 500;
-        filter: var(--drop-shadow-green);
-
-        &:hover {
-            filter: var(--drop-shadow-green-darker);
-        }
     }
     
     span {

@@ -5,6 +5,7 @@ import { Slide } from "react-awesome-reveal";
 import { ArrowUp } from "@/src/components/ArrowUp";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
+import Link from "next/link";
 
 export const Home = () => {
     const theme = useSelector(selectTheme);
@@ -15,9 +16,9 @@ export const Home = () => {
                 <Profile />
                 <Slide direction="up" triggerOnce>
                     <ContainerArrow>
-                        <a href="#skills" className="arrow-down-icon">
+                        <Link href="#skills" className="arrow-down-icon">
                             <BsFillArrowDownSquareFill />
-                        </a>
+                        </Link>
                     </ContainerArrow>
                 </Slide>
             </Banner>

@@ -35,9 +35,9 @@ export const Container = styled.div`
                         (props.theme === "light" && props.bar) ||
                         (props.theme === "dark" && !props.bar)
                     ) {
-                        return "var(--color-light)";
+                        return "var(--color-white)";
                     } else {
-                        return "var(--color-dark)";
+                        return "var(--color-black)";
                     }
                 }};
 
@@ -52,9 +52,9 @@ export const Container = styled.div`
                             (props.theme === "light" && props.bar) ||
                             (props.theme === "dark" && !props.bar)
                         ) {
-                            return "var(--color-light)";
+                            return "var(--color-white)";
                         } else {
-                            return "var(--color-dark)";
+                            return "var(--color-black)";
                         }
                     }};
 

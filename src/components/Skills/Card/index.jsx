@@ -4,6 +4,7 @@ import { selectTheme } from "@/app/GlobalRedux/Features/ThemeSlice";
 import { useSelector } from "react-redux";
 import { CropText } from "@/src/tools/CropText";
 import { useTranslation } from "react-i18next";
+import { DefaultButtonLink } from "../../Buttons";
 
 export const Card = (props) => {
     const { t } = useTranslation();
@@ -19,9 +20,11 @@ export const Card = (props) => {
             <h1>{title}</h1>
             <CropText text={description} limit={110} />
             {link ? (
-                <a target="_blank" href={link}>
-                    <button>{t("general.button.knowMore")}</button>
-                </a>
+                <DefaultButtonLink
+                    text={t("general.button.knowMore")}
+                    link={link}
+                    isTarget={true}
+                />
             ) : null}
         </Container>
     );

@@ -72,11 +72,11 @@ export const Profile = styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: var(--color-dark);
+                background-color: var(--color-black);
                 width: 2rem;
                 height: 2rem;
                 margin-right: 0.5rem;
-                border-radius: 50px;
+                border-radius: 0.5rem;
                 transition: all 400ms ease-in-out;
 
                 &:hover {
@@ -85,7 +85,7 @@ export const Profile = styled.div`
 
                 a {
                     margin-top: 0.2rem;
-                    color: var(--color-light);
+                    color: var(--color-white);
                 }
             }
         }
@@ -122,8 +122,8 @@ export const Form = styled.div`
     form {
         background: ${(props) =>
             props.theme === "dark"
-                ? "var(--color-dark-grey)"
-                : "var(--color-light)"};
+                ? "var(--color-gradient-dark-grey)"
+                : "var(--color-white)"};
         padding: 0.8rem;
         border-radius: 5px;
 
@@ -133,7 +133,11 @@ export const Form = styled.div`
         .subject,
         .phone {
             display: flex;
-            border: 1px solid gray;
+            background: ${(props) =>
+            props.theme === "dark"
+                ? "var(--color-gradient-lighter-grey)"
+                : "var(--color-darker-white)"};
+            border-radius: 0.5rem;
             margin-bottom: 0.5rem;
 
             input,
@@ -143,8 +147,8 @@ export const Form = styled.div`
                 outline: none;
                 color: ${(props) =>
                     props.theme === "dark"
-                        ? "var(--color-light)"
-                        : "var(--color-dark-grey)"};
+                        ? "var(--color-white)"
+                        : "var(--color-gradient-dark-grey)"};
                 background-color: transparent;
                 padding: 1rem 0.5rem;
 
@@ -155,18 +159,19 @@ export const Form = styled.div`
                     transition: background-color 5000s ease-in-out 0s;
                     -webkit-text-fill-color: ${(props) =>
                         props.theme === "dark"
-                            ? "var(--color-light)"
-                            : "var(--color-dark-grey)"} !important;
+                            ? "var(--color-white)"
+                            : "var(--color-gradient-dark-grey)"} !important;
                     -webkit-box-shadow: 0 0 0px 1000px
                         ${(props) =>
                             props.theme === "dark"
-                                ? "var(--color-dark-grey)"
-                                : "var(--color-light)"}
+                                ? "var(--color-gradient-dark-grey)"
+                                : "var(--color-white)"}
                         inset !important;
                 }
             }
 
             span {
+                border-radius: 0.5rem 0 0 0.5rem;
                 background-color: var(--color-primary);
                 width: 3rem;
                 display: flex;

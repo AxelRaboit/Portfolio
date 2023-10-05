@@ -33,8 +33,8 @@ export const ContainerArrow = styled.div`
 export const Banner = styled.div`
     background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-dark-grey)"
-            : "var(--color-light)"};
+            ? "var(--color-gradient-dark-grey)"
+            : "var(--color-white)"};
     height: calc(100vh - 58px);
     
     @media (max-width: 940px) {

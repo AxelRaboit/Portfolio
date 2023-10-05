@@ -18,6 +18,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { DefaultButtonLink, DefaultButton } from "@/src/components";
+import Link from "next/link";
 
 export const Profile = () => {
     const { t } = useTranslation();
@@ -93,36 +94,36 @@ export const Profile = () => {
                             <p>{t("profile.checkOut")}</p>
                             <div className="social-icons">
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://www.linkedin.com/in/axel-raboit/"
                                     >
                                         <FaLinkedinIn />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://github.com/AxelRaboit"
                                     >
                                         <AiOutlineGithub />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://gitlab.com/axel.raboit"
                                     >
                                         <AiFillGitlab />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <span>
-                                    <a
+                                    <Link
                                         target="_blank"
                                         href="https://www.instagram.com/axelr_7/"
                                     >
                                         <AiOutlineInstagram />
-                                    </a>
+                                    </Link>
                                 </span>
                             </div>
                         </Social>

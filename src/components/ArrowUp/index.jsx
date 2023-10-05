@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { ContainerArrow } from "./ArrowUpElements";
+import Link from "next/link";
 
 export const ArrowUp = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -31,9 +32,9 @@ export const ArrowUp = () => {
 
     return (
         <ContainerArrow style={{ display: isVisible ? "block" : "none" }}>
-            <a href="#" className="arrow-up-icon" onClick={scrollToTop}>
+            <Link href="#" className="arrow-up-icon" onClick={scrollToTop}>
                 <BsFillArrowUpSquareFill />
-            </a>
+            </Link>
         </ContainerArrow>
     );
 };

@@ -40,8 +40,8 @@ export const Container = styled.div`
         height: 4px;
         background: ${(props) =>
         props.theme === "dark"
-            ? "var(--color-dark-grey)"
-            : "var(--color-light)"};
+            ? "var(--color-gradient-dark-grey)"
+            : "var(--color-white)"};
         padding: 0.1rem;
         margin-top: 1rem;
         transition: all 400ms ease-in-out;

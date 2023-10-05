@@ -153,14 +153,7 @@ export const Social = styled.div`
         span {
             width: 2.3rem;
             height: 2rem;
-            clip-path: polygon(
-                25% 0%,
-                75% 0%,
-                100% 50%,
-                75% 100%,
-                25% 100%,
-                0% 50%
-            );
+            border-radius: 0.5rem;
             background-color: var(--color-primary);
             position: relative;
             transition: transform 400ms ease-in-out;
@@ -181,6 +174,7 @@ export const Social = styled.div`
 `;
 
 export const ProfileAvatar = styled(Image)`
+    border-radius: .5rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     object-fit: contain;
