@@ -1,7 +1,9 @@
 {
     "global": {
       "available": "Disponible",
-      "unavailable": "Indisponible"
+      "unavailable": "Indisponible",
+      "loadMore": "Charger plus",
+      "loadLess": "Charger moins"
     },
     "messages": {
       "form": {
