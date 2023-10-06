@@ -10,7 +10,9 @@ import { settings } from "./SliderConfiguration";
 export const SliderComp = ({ data }) => {
     const arrowRef = useRef(null);
     let sliderProject = "";
-    sliderProject = data.map((item, i) => <Project data={item} key={i} />);
+    
+    sliderProject = data.map((item, i) => <Project {...item} key={i} />);
+
     return (
         <Zoom triggerOnce>
             <Container>

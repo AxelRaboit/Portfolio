@@ -6,11 +6,10 @@ import { CropText } from "@/src/tools/CropText";
 import { useTranslation } from "react-i18next";
 import { DefaultButtonLink } from "../../Buttons";
 
-export const Card = (props) => {
+export const Card = ({ Icon, description, title, link }) => {
     const { t } = useTranslation();
 
     const theme = useSelector(selectTheme);
-    const { Icon, description, title, link } = props;
 
     return (
         <Container theme={theme}>

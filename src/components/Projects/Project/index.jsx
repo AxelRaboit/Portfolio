@@ -9,22 +9,21 @@ import { Container, ProjectImage } from "./ProjectElements";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 import { DefaultButtonLink } from "@/src/components";
 
-export const Project = (props) => {
+export const Project = ({
+    nameFR,
+    nameEN,
+    img,
+    descriptionFR,
+    descriptionEN,
+    repoLink,
+    demoLink,
+    isAvailable,
+}) => {
     const theme = useSelector(selectTheme);
     const { t } = useTranslation();
     const currentLocale = useSelector(selectCurrentLocale);
     const english = "en";
     const defaultImg = "/assets/project/project-no-image.png";
-    const {
-        nameFR,
-        nameEN,
-        img,
-        descriptionFR,
-        descriptionEN,
-        repoLink,
-        demoLink,
-        isAvailable,
-    } = props.data;
 
     return (
         <Container
@@ -69,7 +68,7 @@ export const Project = (props) => {
                                     text={t("projects.cards.repositoryLink")}
                                     link={repoLink}
                                     isTarget={true}
-                                    containerExtraClass = "repo-link"
+                                    containerExtraClass="repo-link"
                                 />
                             ) : null}
                             {demoLink ? (
@@ -77,7 +76,7 @@ export const Project = (props) => {
                                     text={t("projects.cards.demoLink")}
                                     link={demoLink}
                                     isTarget={true}
-                                    containerExtraClass = "demo-link"
+                                    containerExtraClass="demo-link"
                                 />
                             ) : null}
                         </div>
