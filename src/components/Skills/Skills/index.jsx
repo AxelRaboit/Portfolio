@@ -111,7 +111,7 @@ export const Skills = () => {
             try {
                 const { skills } = await getSkills();
 
-                const mainSkills = ["symfony", "next", "react", "javascript", "mongodb", "sql", "redux", "tailwind"];
+                const mainSkills = ["symfony", "next", "react", "php", "javascript", "mongodb", "sql", "redux", "tailwind"];
                 skills.sort(skillSorting(mainSkills));
 
                 const initialSkills = skills.slice(0, skillsPerPage);
