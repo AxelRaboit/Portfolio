@@ -6,7 +6,10 @@ export const Container = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
-    background-color: var(--color-primary);
+    background-color: ${(props) =>
+        props.color === "primary"
+            ? "var(--color-primary)"
+            : "var(--color-secondary)"};
     position: relative;
     
     &:focus {
@@ -24,12 +27,18 @@ export const Container = styled.button`
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         padding: 0.7rem 2rem;
-        background-color: var(--color-primary);
+        background-color: ${(props) =>
+        props.color === "primary"
+            ? "var(--color-primary)"
+            : "var(--color-secondary)"};
         border: none;
         font-family: var(--font-roboto-mono);
         position: relative;
         &:hover {
-            background-color: var(--color-primary-hover);
+            background-color: ${(props) =>
+        props.color === "primary"
+            ? "var(--color-primary-hover)"
+            : "var(--color-secondary-hover)"};
         }
     }
 `;

@@ -3,6 +3,7 @@ import { Container } from "./DefaultButtonLinkElements";
 import Link from "next/link";
 
 export const DefaultButtonLink = ({
+    color = "primary",
     text,
     link,
     isTarget,
@@ -12,7 +13,7 @@ export const DefaultButtonLink = ({
     linkExtraClass = "",
 }) => {
     return (
-        <Container className={`default-button-link ${containerExtraClass}`}>
+        <Container className={`default-button-link ${containerExtraClass}`} color={color}>
             {
                 isDownloadable ? (
                     <Link

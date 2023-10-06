@@ -38,6 +38,8 @@ code {
   --color-black: #191923;
   --color-primary: #449213;
   --color-primary-hover: #35730e;
+  --color-secondary: #28282c;
+  --color-secondary-hover: rgb(13, 13, 16);
   --color-red: #ff4d4d;
   --color-green: #00ff80;
   --color-yellow: #ffcc00;

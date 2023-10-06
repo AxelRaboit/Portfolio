@@ -189,7 +189,7 @@ export const Skills = () => {
             )}
             <div className="container-skills-buttons">
                 {displayedSkills.length > INITIAL_SKILLS_PER_LOAD && (
-                    <DefaultButton onClick={loadLessSkills} text={t("global.loadLess")} />
+                    <DefaultButton color="secondary" onClick={loadLessSkills} text={t("global.loadLess")} />
                 )}
                 {displayedSkills.length < totalSkills.length && (
                     <DefaultButton onClick={loadMoreSkills} text={t("global.loadMore")} />
