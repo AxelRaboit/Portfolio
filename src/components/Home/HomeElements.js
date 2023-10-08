@@ -34,10 +34,10 @@ export const Banner = styled.div`
         props.theme === "dark"
             ? "var(--color-gradient-deep-dark-grey)"
             : "var(--color-white)"};
-    height: calc(100vh - 58px);
+            /* height: calc(100vh - 58px); */
     
-    @media (max-width: 940px) {
-        height: 100%;
+    @media (max-width: 1400px) {
+        /* height: 100%; */
         padding-bottom: 2rem;
     }
 `;
