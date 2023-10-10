@@ -1,9 +1,43 @@
 import styled from "styled-components";
 import Image from "next/image";
 
+export const ContainerProjectImage = styled.div`
+    width: 100%;
+    height: 100%;
+    `;
+
 export const ProjectImage = styled(Image)`
+    position: relative;
     object-fit: cover;
     transition: transform 400ms ease-in-out;
+    width: 100%;
+    height: 100%;
+`;
+
+export const Technologies = styled.div`
+    margin: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .tech {
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+        border: 1px solid var(--color-white);
+        background: ${(props) =>
+        props.theme === "dark"
+            ? "var(--color-black)"
+            : "var(--color-darker-white)"};
+        font-size: 0.7rem;
+        color: ${(props) =>
+        props.theme === "dark" ? "var(--color-white)" : "var(--color-black)"};
+    }
 `;
 
 export const Container = styled.div`
@@ -65,6 +99,7 @@ export const Container = styled.div`
     }
 
     .content {
+        z-index: 3;
         position: absolute;
         right: 0;
         left: 0;

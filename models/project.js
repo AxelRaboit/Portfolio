@@ -35,6 +35,10 @@ const projectSchema = new Schema(
             required: true,
             default: true,
         },
+        technologies: {
+            type: Array,
+            required: false,
+        }
     },
     {
         timestamps: true,

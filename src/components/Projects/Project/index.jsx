@@ -5,7 +5,12 @@ import { useTranslation } from "react-i18next";
 import { CropText } from "@/src/tools/CropText";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, ProjectImage } from "./ProjectElements";
+import {
+    Container,
+    ProjectImage,
+    ContainerProjectImage,
+    Technologies,
+} from "./ProjectElements";
 import { selectCurrentLocale } from "@/app/GlobalRedux/Features/LocaleSlice";
 import { DefaultButtonLink } from "@/src/components";
 
@@ -18,6 +23,7 @@ export const Project = ({
     repoLink,
     demoLink,
     isAvailable,
+    technologies,
 }) => {
     const theme = useSelector(selectTheme);
     const { t } = useTranslation();
@@ -31,15 +37,26 @@ export const Project = ({
             theme={theme}
             availability={isAvailable ? 1 : 0}
         >
-            <ProjectImage
-                src={img ? img : defaultImg}
-                alt="project"
-                loading="eager"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "100%", height: "100%" }}
-            />
+            <ContainerProjectImage>
+                <ProjectImage
+                    src={img ? img : defaultImg}
+                    alt="project"
+                    loading="eager"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "100%" }}
+                />
+                {technologies && (
+                    <Technologies theme={theme}>
+                        {technologies?.map((tech, index) => (
+                            <div key={index} className="tech">
+                                <span>{tech}</span>
+                            </div>
+                        ))}
+                    </Technologies>
+                )}
+            </ContainerProjectImage>
             <div className="content">
                 <h1>{currentLocale === english ? nameEN : nameFR}</h1>
                 <div className="availability">
