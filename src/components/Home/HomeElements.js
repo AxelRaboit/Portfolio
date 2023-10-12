@@ -36,7 +36,7 @@ export const Banner = styled.div`
             : "var(--color-white)"};
             height: calc(100vh - 58px);
     
-    @media (max-width: 1400px) {
+    @media (max-width: 1920px) {
         height: 100%;
         padding-bottom: 2rem;
     }
