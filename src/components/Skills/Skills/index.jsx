@@ -28,6 +28,7 @@ import {
     SiFirebase,
     SiJest,
     SiGnubash,
+    SiPostgresql
 } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { BiLogoTailwindCss } from "react-icons/bi";
@@ -69,6 +70,7 @@ const iconMappings = {
     TbBrandNextjs: TbBrandNextjs,
     GiTechnoHeart: GiTechnoHeart,
     SiGnubash: SiGnubash,
+    SiPostgresql: SiPostgresql,
 };
 
 const getSkills = async () => {
